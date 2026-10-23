@@ -2,651 +2,611 @@
   {
     "wo_id": "WO-FD004-001",
     "engine": "FD004/unit1",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 55.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 33.6,
     "rul_interval": [
-      11.2,
-      98.8
+      0.0,
+      67.1
     ],
-    "health_index": 0.16,
+    "health_index": 0.15,
     "top_sensors": [
       "reg4",
       "s14",
-      "reg3"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 22
   },
   {
     "wo_id": "WO-FD004-002",
     "engine": "FD004/unit2",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 66.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 61.8,
     "rul_interval": [
-      22.9,
-      110.5
+      17.8,
+      105.9
     ],
     "health_index": 0.16,
     "top_sensors": [
       "reg4",
-      "reg5",
-      "reg3"
+      "cycle",
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 39
   },
   {
-    "wo_id": "WO-FD004-005",
-    "engine": "FD004/unit5",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 98.2,
+    "wo_id": "WO-FD004-004",
+    "engine": "FD004/unit4",
+    "severity": "P2_HIGH",
+    "rul_pred": 75.1,
     "rul_interval": [
-      67.2,
-      129.1
+      31.1,
+      119.1
     ],
     "health_index": 0.0,
     "top_sensors": [
-      "s11",
-      "s4",
-      "reg1"
+      "s14",
+      "reg4",
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 149
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 75
   },
   {
     "wo_id": "WO-FD004-008",
     "engine": "FD004/unit8",
     "severity": "P1_CRITICAL",
-    "rul_pred": 16.6,
+    "rul_pred": 22.6,
     "rul_interval": [
-      0.0,
-      59.3
+      4.0,
+      41.2
     ],
-    "health_index": 0.18,
+    "health_index": 0.14,
     "top_sensors": [
       "reg4",
       "s11",
-      "s14"
+      "cycle"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 14
   },
   {
     "wo_id": "WO-FD004-012",
     "engine": "FD004/unit12",
     "severity": "P1_CRITICAL",
-    "rul_pred": 15.7,
+    "rul_pred": 9.2,
     "rul_interval": [
       0.0,
-      58.4
+      27.8
     ],
-    "health_index": 0.4,
+    "health_index": 0.39,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "s11"
+      "s14"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 7
-  },
-  {
-    "wo_id": "WO-FD004-013",
-    "engine": "FD004/unit13",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 68.0,
-    "rul_interval": [
-      24.2,
-      111.8
-    ],
-    "health_index": 0.37,
-    "top_sensors": [
-      "reg4",
-      "reg3",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 71
   },
   {
     "wo_id": "WO-FD004-014",
     "engine": "FD004/unit14",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 83.4,
+    "severity": "P2_HIGH",
+    "rul_pred": 81.6,
     "rul_interval": [
-      39.6,
-      127.2
+      37.6,
+      125.6
     ],
     "health_index": 0.0,
     "top_sensors": [
       "s11",
-      "reg2",
-      "s15"
+      "s15",
+      "reg2"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 105
   },
   {
     "wo_id": "WO-FD004-015",
     "engine": "FD004/unit15",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 24.5,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 23.5,
     "rul_interval": [
-      0.0,
-      67.3
+      4.9,
+      42.2
     ],
     "health_index": 0.22,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "reg3"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
   },
   {
-    "wo_id": "WO-FD004-017",
-    "engine": "FD004/unit17",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 88.2,
+    "wo_id": "WO-FD004-016",
+    "engine": "FD004/unit16",
+    "severity": "P2_HIGH",
+    "rul_pred": 84.4,
     "rul_interval": [
-      44.3,
-      132.0
+      40.4,
+      128.4
     ],
-    "health_index": 0.0,
+    "health_index": 0.58,
     "top_sensors": [
-      "reg4",
-      "reg3",
-      "s11"
+      "cycle",
+      "s15",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 162
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 160
   },
   {
     "wo_id": "WO-FD004-018",
     "engine": "FD004/unit18",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 90.2,
+    "severity": "P2_HIGH",
+    "rul_pred": 81.7,
     "rul_interval": [
-      59.2,
-      121.2
+      37.7,
+      125.7
     ],
-    "health_index": 0.09,
+    "health_index": 0.13,
     "top_sensors": [
       "reg4",
-      "reg5",
-      "reg3"
+      "cycle",
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 104
   },
   {
     "wo_id": "WO-FD004-020",
     "engine": "FD004/unit20",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 61.2,
+    "severity": "P2_HIGH",
+    "rul_pred": 80.9,
     "rul_interval": [
-      17.4,
-      105.0
+      36.9,
+      125.0
     ],
-    "health_index": 0.37,
+    "health_index": 0.38,
     "top_sensors": [
       "s11",
       "reg5",
       "s4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 82
   },
   {
     "wo_id": "WO-FD004-021",
     "engine": "FD004/unit21",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 76.3,
+    "severity": "P2_HIGH",
+    "rul_pred": 82.6,
     "rul_interval": [
-      32.5,
-      120.1
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "reg4",
-      "s14",
-      "reg3"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 91
-  },
-  {
-    "wo_id": "WO-FD004-022",
-    "engine": "FD004/unit22",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 21.2,
-    "rul_interval": [
-      0.0,
-      63.9
-    ],
-    "health_index": 0.64,
-    "top_sensors": [
-      "s11",
-      "reg5",
-      "cycle"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 11
-  },
-  {
-    "wo_id": "WO-FD004-023",
-    "engine": "FD004/unit23",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 54.6,
-    "rul_interval": [
-      10.8,
-      98.4
-    ],
-    "health_index": 0.03,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 26
-  },
-  {
-    "wo_id": "WO-FD004-024",
-    "engine": "FD004/unit24",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 84.4,
-    "rul_interval": [
-      40.6,
-      128.2
-    ],
-    "health_index": 0.78,
-    "top_sensors": [
-      "reg4",
-      "reg3",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 142
-  },
-  {
-    "wo_id": "WO-FD004-025",
-    "engine": "FD004/unit25",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 30.3,
-    "rul_interval": [
-      0.0,
-      73.0
-    ],
-    "health_index": 0.11,
-    "top_sensors": [
-      "reg4",
-      "s14",
-      "s11"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 39
-  },
-  {
-    "wo_id": "WO-FD004-026",
-    "engine": "FD004/unit26",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 83.3,
-    "rul_interval": [
-      39.5,
-      127.1
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "s11",
-      "reg2",
-      "s7"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 92
-  },
-  {
-    "wo_id": "WO-FD004-027",
-    "engine": "FD004/unit27",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 56.2,
-    "rul_interval": [
-      12.4,
-      100.0
-    ],
-    "health_index": 0.1,
-    "top_sensors": [
-      "s11",
-      "reg4",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 76
-  },
-  {
-    "wo_id": "WO-FD004-030",
-    "engine": "FD004/unit30",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 95.9,
-    "rul_interval": [
-      64.9,
-      126.9
-    ],
-    "health_index": 0.68,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 118
-  },
-  {
-    "wo_id": "WO-FD004-031",
-    "engine": "FD004/unit31",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 43.6,
-    "rul_interval": [
-      0.9,
-      86.3
-    ],
-    "health_index": 0.08,
-    "top_sensors": [
-      "s11",
-      "reg5",
-      "reg2"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 6
-  },
-  {
-    "wo_id": "WO-FD004-032",
-    "engine": "FD004/unit32",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 17.8,
-    "rul_interval": [
-      0.0,
-      60.6
-    ],
-    "health_index": 0.57,
-    "top_sensors": [
-      "s11",
-      "reg4",
-      "s15"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 22
-  },
-  {
-    "wo_id": "WO-FD004-035",
-    "engine": "FD004/unit35",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 34.9,
-    "rul_interval": [
-      0.0,
-      77.6
-    ],
-    "health_index": 0.2,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "s14"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 36
-  },
-  {
-    "wo_id": "WO-FD004-036",
-    "engine": "FD004/unit36",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 85.5,
-    "rul_interval": [
-      41.6,
-      129.3
-    ],
-    "health_index": 0.45,
-    "top_sensors": [
-      "reg4",
-      "s8",
-      "reg3"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 73
-  },
-  {
-    "wo_id": "WO-FD004-037",
-    "engine": "FD004/unit37",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 50.9,
-    "rul_interval": [
-      7.1,
-      94.7
-    ],
-    "health_index": 0.01,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "cycle"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 89
-  },
-  {
-    "wo_id": "WO-FD004-038",
-    "engine": "FD004/unit38",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 31.2,
-    "rul_interval": [
-      0.0,
-      73.9
-    ],
-    "health_index": 0.18,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 11
-  },
-  {
-    "wo_id": "WO-FD004-039",
-    "engine": "FD004/unit39",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 76.8,
-    "rul_interval": [
-      33.0,
-      120.6
+      38.6,
+      126.7
     ],
     "health_index": 0.0,
     "top_sensors": [
       "reg4",
       "cycle",
+      "reg5"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 91
+  },
+  {
+    "wo_id": "WO-FD004-022",
+    "engine": "FD004/unit22",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 13.8,
+    "rul_interval": [
+      0.0,
+      32.4
+    ],
+    "health_index": 0.62,
+    "top_sensors": [
+      "cycle",
+      "reg5",
+      "s11"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 11
+  },
+  {
+    "wo_id": "WO-FD004-023",
+    "engine": "FD004/unit23",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 47.0,
+    "rul_interval": [
+      13.5,
+      80.6
+    ],
+    "health_index": 0.04,
+    "top_sensors": [
+      "s11",
+      "cycle",
+      "reg4"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 26
+  },
+  {
+    "wo_id": "WO-FD004-025",
+    "engine": "FD004/unit25",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 37.8,
+    "rul_interval": [
+      4.3,
+      71.4
+    ],
+    "health_index": 0.13,
+    "top_sensors": [
+      "cycle",
+      "s11",
       "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 39
+  },
+  {
+    "wo_id": "WO-FD004-027",
+    "engine": "FD004/unit27",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 44.6,
+    "rul_interval": [
+      11.1,
+      78.2
+    ],
+    "health_index": 0.14,
+    "top_sensors": [
+      "s11",
+      "reg4",
+      "cycle"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 76
+  },
+  {
+    "wo_id": "WO-FD004-030",
+    "engine": "FD004/unit30",
+    "severity": "P2_HIGH",
+    "rul_pred": 83.1,
+    "rul_interval": [
+      39.1,
+      127.1
+    ],
+    "health_index": 0.65,
+    "top_sensors": [
+      "reg4",
+      "cycle",
+      "s14"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 118
+  },
+  {
+    "wo_id": "WO-FD004-031",
+    "engine": "FD004/unit31",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 47.8,
+    "rul_interval": [
+      14.2,
+      81.3
+    ],
+    "health_index": 0.07,
+    "top_sensors": [
+      "cycle",
+      "s11",
+      "reg5"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 6
+  },
+  {
+    "wo_id": "WO-FD004-032",
+    "engine": "FD004/unit32",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 6.5,
+    "rul_interval": [
+      0.0,
+      25.1
+    ],
+    "health_index": 0.55,
+    "top_sensors": [
+      "s11",
+      "reg4",
+      "cycle"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 22
+  },
+  {
+    "wo_id": "WO-FD004-035",
+    "engine": "FD004/unit35",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 39.0,
+    "rul_interval": [
+      5.4,
+      72.5
+    ],
+    "health_index": 0.16,
+    "top_sensors": [
+      "cycle",
+      "reg4",
+      "s14"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 36
+  },
+  {
+    "wo_id": "WO-FD004-037",
+    "engine": "FD004/unit37",
+    "severity": "P2_HIGH",
+    "rul_pred": 72.9,
+    "rul_interval": [
+      28.9,
+      117.0
+    ],
+    "health_index": 0.03,
+    "top_sensors": [
+      "cycle",
+      "reg4",
+      "s14"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 89
+  },
+  {
+    "wo_id": "WO-FD004-038",
+    "engine": "FD004/unit38",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 11.7,
+    "rul_interval": [
+      0.0,
+      30.3
+    ],
+    "health_index": 0.18,
+    "top_sensors": [
+      "reg4",
+      "reg5",
+      "s11"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 11
+  },
+  {
+    "wo_id": "WO-FD004-039",
+    "engine": "FD004/unit39",
+    "severity": "P2_HIGH",
+    "rul_pred": 81.4,
+    "rul_interval": [
+      37.4,
+      125.5
+    ],
+    "health_index": 0.0,
+    "top_sensors": [
+      "reg4",
+      "s14",
+      "cycle"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 151
   },
   {
     "wo_id": "WO-FD004-040",
     "engine": "FD004/unit40",
     "severity": "P1_CRITICAL",
-    "rul_pred": 10.4,
+    "rul_pred": 16.1,
     "rul_interval": [
       0.0,
-      53.1
+      34.8
     ],
-    "health_index": 0.35,
+    "health_index": 0.34,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "s11"
+      "s14"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 10
+  },
+  {
+    "wo_id": "WO-FD004-041",
+    "engine": "FD004/unit41",
+    "severity": "P2_HIGH",
+    "rul_pred": 90.4,
+    "rul_interval": [
+      46.4,
+      134.5
+    ],
+    "health_index": 0.0,
+    "top_sensors": [
+      "cycle",
+      "reg5",
+      "reg2"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 97
   },
   {
     "wo_id": "WO-FD004-042",
     "engine": "FD004/unit42",
-    "severity": "HUMAN_REVIEW",
+    "severity": "P1_CRITICAL",
     "rul_pred": 37.7,
     "rul_interval": [
-      0.0,
-      80.5
+      4.1,
+      71.2
     ],
     "health_index": 0.0,
     "top_sensors": [
       "s11",
       "reg4",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 30
   },
   {
     "wo_id": "WO-FD004-043",
     "engine": "FD004/unit43",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 93.5,
+    "severity": "P2_HIGH",
+    "rul_pred": 74.5,
     "rul_interval": [
-      62.6,
-      124.5
+      30.5,
+      118.5
     ],
-    "health_index": 0.11,
+    "health_index": 0.09,
     "top_sensors": [
       "reg4",
       "s11",
-      "s8"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 42
   },
   {
     "wo_id": "WO-FD004-044",
     "engine": "FD004/unit44",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 36.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 38.1,
     "rul_interval": [
-      0.0,
-      78.8
+      4.6,
+      71.6
     ],
     "health_index": 0.07,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "cycle"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 60
   },
   {
     "wo_id": "WO-FD004-047",
     "engine": "FD004/unit47",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 26.9,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 32.7,
     "rul_interval": [
       0.0,
-      69.6
+      66.3
     ],
-    "health_index": 0.31,
+    "health_index": 0.27,
     "top_sensors": [
-      "reg4",
       "s11",
-      "reg5"
+      "reg4",
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 34
+  },
+  {
+    "wo_id": "WO-FD004-048",
+    "engine": "FD004/unit48",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 62.5,
+    "rul_interval": [
+      18.5,
+      106.5
+    ],
+    "health_index": 0.07,
+    "top_sensors": [
+      "s14",
+      "cycle",
+      "reg4"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 45
   },
   {
     "wo_id": "WO-FD004-049",
     "engine": "FD004/unit49",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 32.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 20.2,
     "rul_interval": [
-      0.0,
-      75.4
+      1.5,
+      38.8
     ],
     "health_index": 0.15,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "reg5"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 24
   },
   {
     "wo_id": "WO-FD004-058",
     "engine": "FD004/unit58",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 52.9,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 45.8,
     "rul_interval": [
-      9.1,
-      96.7
+      12.3,
+      79.4
     ],
     "health_index": 0.31,
     "top_sensors": [
@@ -654,1599 +614,1559 @@
       "reg4",
       "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 8
   },
   {
     "wo_id": "WO-FD004-061",
     "engine": "FD004/unit61",
     "severity": "HUMAN_REVIEW",
-    "rul_pred": 25.1,
+    "rul_pred": 49.4,
     "rul_interval": [
-      0.0,
-      67.8
+      15.8,
+      82.9
     ],
     "health_index": 0.14,
     "top_sensors": [
-      "reg4",
       "s11",
-      "s14"
+      "cycle",
+      "reg4"
     ],
     "action": "Exception queue: engineer review",
     "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 51
   },
   {
     "wo_id": "WO-FD004-062",
     "engine": "FD004/unit62",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 35.6,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 28.8,
     "rul_interval": [
-      0.0,
-      78.3
+      10.2,
+      47.4
     ],
-    "health_index": 0.0,
+    "health_index": 0.02,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "reg5"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 33
   },
   {
     "wo_id": "WO-FD004-064",
     "engine": "FD004/unit64",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 37.7,
     "rul_interval": [
-      0.0,
-      71.8
+      4.2,
+      71.3
     ],
-    "health_index": 0.11,
+    "health_index": 0.1,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "s14"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 46
   },
   {
     "wo_id": "WO-FD004-065",
     "engine": "FD004/unit65",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 43.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 30.0,
     "rul_interval": [
-      1.0,
-      86.4
+      11.4,
+      48.6
     ],
-    "health_index": 0.49,
+    "health_index": 0.48,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "cycle"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
   },
   {
     "wo_id": "WO-FD004-067",
     "engine": "FD004/unit67",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 25.4,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 26.7,
     "rul_interval": [
-      0.0,
-      68.1
+      8.0,
+      45.3
     ],
     "health_index": 0.0,
     "top_sensors": [
       "s11",
       "reg4",
-      "s15"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 46
   },
   {
     "wo_id": "WO-FD004-068",
     "engine": "FD004/unit68",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 27.8,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 34.3,
     "rul_interval": [
-      0.0,
-      70.5
+      0.7,
+      67.8
     ],
-    "health_index": 0.17,
+    "health_index": 0.15,
     "top_sensors": [
       "reg4",
-      "s14",
-      "s11"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 46
   },
   {
     "wo_id": "WO-FD004-069",
     "engine": "FD004/unit69",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 25.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 23.2,
     "rul_interval": [
-      0.0,
-      68.5
+      4.6,
+      41.9
     ],
-    "health_index": 0.23,
+    "health_index": 0.22,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "s14"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
   },
   {
     "wo_id": "WO-FD004-070",
     "engine": "FD004/unit70",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 39.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 49.7,
     "rul_interval": [
-      0.0,
-      81.9
+      16.1,
+      83.2
     ],
     "health_index": 0.08,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "s14"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 33
   },
   {
     "wo_id": "WO-FD004-071",
     "engine": "FD004/unit71",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.9,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 30.9,
     "rul_interval": [
       0.0,
-      72.6
+      64.4
     ],
     "health_index": 0.89,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "reg5"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 15
   },
   {
     "wo_id": "WO-FD004-073",
     "engine": "FD004/unit73",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 45.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 41.8,
     "rul_interval": [
-      3.0,
-      88.4
+      8.3,
+      75.4
     ],
-    "health_index": 0.17,
+    "health_index": 0.16,
     "top_sensors": [
+      "cycle",
       "s11",
-      "reg5",
-      "reg2"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 23
+  },
+  {
+    "wo_id": "WO-FD004-074",
+    "engine": "FD004/unit74",
+    "severity": "P2_HIGH",
+    "rul_pred": 75.2,
+    "rul_interval": [
+      31.2,
+      119.3
+    ],
+    "health_index": 0.5,
+    "top_sensors": [
+      "s14",
+      "reg4",
+      "cycle"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 89
   },
   {
     "wo_id": "WO-FD004-075",
     "engine": "FD004/unit75",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 57.6,
+    "severity": "P2_HIGH",
+    "rul_pred": 89.7,
     "rul_interval": [
-      13.8,
-      101.4
+      45.7,
+      133.7
     ],
     "health_index": 0.0,
     "top_sensors": [
       "reg4",
-      "reg5",
-      "reg3"
+      "cycle",
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 124
   },
   {
     "wo_id": "WO-FD004-077",
     "engine": "FD004/unit77",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 82.5,
+    "severity": "P2_HIGH",
+    "rul_pred": 70.5,
     "rul_interval": [
-      38.6,
-      126.3
+      26.5,
+      114.5
     ],
-    "health_index": 0.06,
+    "health_index": 0.02,
     "top_sensors": [
       "reg5",
       "s15",
-      "reg2"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 25
   },
   {
     "wo_id": "WO-FD004-078",
     "engine": "FD004/unit78",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 84.8,
+    "severity": "P2_HIGH",
+    "rul_pred": 68.2,
     "rul_interval": [
-      41.0,
-      128.6
+      24.2,
+      112.2
     ],
     "health_index": 0.0,
     "top_sensors": [
       "reg5",
-      "reg2",
-      "s11"
+      "s11",
+      "reg2"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 74
+  },
+  {
+    "wo_id": "WO-FD004-079",
+    "engine": "FD004/unit79",
+    "severity": "P2_HIGH",
+    "rul_pred": 90.4,
+    "rul_interval": [
+      46.4,
+      134.4
+    ],
+    "health_index": 0.03,
+    "top_sensors": [
+      "reg4",
+      "cycle",
+      "reg5"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 78
   },
   {
     "wo_id": "WO-FD004-082",
     "engine": "FD004/unit82",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 43.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 26.7,
     "rul_interval": [
-      0.4,
-      85.8
+      8.0,
+      45.3
     ],
-    "health_index": 0.13,
+    "health_index": 0.12,
     "top_sensors": [
-      "reg4",
       "s11",
-      "reg5"
+      "reg4",
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 10
   },
   {
     "wo_id": "WO-FD004-086",
     "engine": "FD004/unit86",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 40.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 63.7,
     "rul_interval": [
-      0.0,
-      82.7
+      19.7,
+      107.7
     ],
-    "health_index": 0.23,
+    "health_index": 0.24,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg3"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 70
   },
   {
     "wo_id": "WO-FD004-088",
     "engine": "FD004/unit88",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 69.0,
+    "severity": "P2_HIGH",
+    "rul_pred": 84.1,
     "rul_interval": [
-      25.2,
-      112.8
+      40.1,
+      128.1
     ],
-    "health_index": 0.2,
+    "health_index": 0.18,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s15",
-      "reg5"
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 56
   },
   {
     "wo_id": "WO-FD004-089",
     "engine": "FD004/unit89",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 68.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 49.6,
     "rul_interval": [
-      24.3,
-      111.9
+      16.1,
+      83.2
     ],
-    "health_index": 0.03,
+    "health_index": 0.01,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s14",
-      "reg3"
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 86
+  },
+  {
+    "wo_id": "WO-FD004-090",
+    "engine": "FD004/unit90",
+    "severity": "P2_HIGH",
+    "rul_pred": 89.2,
+    "rul_interval": [
+      45.2,
+      133.2
+    ],
+    "health_index": 0.02,
+    "top_sensors": [
+      "s11",
+      "reg5",
+      "reg4"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 96
   },
   {
     "wo_id": "WO-FD004-091",
     "engine": "FD004/unit91",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 48.9,
+    "severity": "P2_HIGH",
+    "rul_pred": 55.3,
     "rul_interval": [
-      6.2,
-      91.6
+      21.8,
+      88.9
     ],
     "health_index": 0.23,
     "top_sensors": [
-      "s14",
+      "cycle",
       "reg5",
-      "cycle"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 50
   },
   {
     "wo_id": "WO-FD004-092",
     "engine": "FD004/unit92",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 88.6,
+    "severity": "P2_HIGH",
+    "rul_pred": 88.7,
     "rul_interval": [
-      44.8,
-      132.4
+      44.7,
+      132.7
     ],
     "health_index": 0.0,
     "top_sensors": [
       "reg4",
-      "s13",
-      "reg1"
+      "reg1",
+      "s8"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 73
   },
   {
     "wo_id": "WO-FD004-095",
     "engine": "FD004/unit95",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 88.8,
+    "severity": "P2_HIGH",
+    "rul_pred": 92.2,
     "rul_interval": [
-      45.0,
-      132.6
+      48.2,
+      136.2
     ],
-    "health_index": 0.39,
+    "health_index": 0.38,
+    "top_sensors": [
+      "reg5",
+      "reg1",
+      "s11"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 171
+  },
+  {
+    "wo_id": "WO-FD004-096",
+    "engine": "FD004/unit96",
+    "severity": "P2_HIGH",
+    "rul_pred": 78.1,
+    "rul_interval": [
+      34.0,
+      122.1
+    ],
+    "health_index": 0.73,
     "top_sensors": [
       "s11",
       "reg5",
       "reg2"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 171
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 71
   },
   {
     "wo_id": "WO-FD004-099",
     "engine": "FD004/unit99",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 60.7,
+    "severity": "P2_HIGH",
+    "rul_pred": 70.6,
     "rul_interval": [
-      16.9,
-      104.5
+      26.5,
+      114.6
     ],
-    "health_index": 0.05,
+    "health_index": 0.04,
     "top_sensors": [
       "reg4",
-      "reg3",
+      "cycle",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 37
   },
   {
     "wo_id": "WO-FD004-100",
     "engine": "FD004/unit100",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 26.8,
     "rul_interval": [
-      0.0,
-      71.8
+      8.2,
+      45.5
     ],
-    "health_index": 0.68,
+    "health_index": 0.7,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "s11"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 7
   },
   {
     "wo_id": "WO-FD004-101",
     "engine": "FD004/unit101",
     "severity": "P1_CRITICAL",
-    "rul_pred": 10.5,
+    "rul_pred": 16.6,
     "rul_interval": [
       0.0,
-      53.2
+      35.3
     ],
-    "health_index": 0.25,
+    "health_index": 0.22,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "reg5"
+      "s11"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 13
   },
   {
     "wo_id": "WO-FD004-102",
     "engine": "FD004/unit102",
     "severity": "P1_CRITICAL",
-    "rul_pred": 9.1,
+    "rul_pred": 15.1,
     "rul_interval": [
       0.0,
-      51.8
+      33.8
     ],
-    "health_index": 0.28,
+    "health_index": 0.27,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s11",
-      "s14"
+      "reg4"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 22
   },
   {
     "wo_id": "WO-FD004-103",
     "engine": "FD004/unit103",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 47.3,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 32.0,
     "rul_interval": [
-      4.6,
-      90.0
+      0.0,
+      65.6
     ],
     "health_index": 0.09,
     "top_sensors": [
       "reg4",
-      "reg5",
+      "cycle",
       "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 9
   },
   {
     "wo_id": "WO-FD004-105",
     "engine": "FD004/unit105",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 55.0,
+    "severity": "P2_HIGH",
+    "rul_pred": 78.4,
     "rul_interval": [
-      11.2,
-      98.8
+      34.4,
+      122.5
     ],
-    "health_index": 0.1,
+    "health_index": 0.09,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s14",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 100
   },
   {
     "wo_id": "WO-FD004-106",
     "engine": "FD004/unit106",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 79.8,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 60.4,
     "rul_interval": [
-      36.0,
-      123.6
+      16.4,
+      104.5
     ],
-    "health_index": 0.07,
+    "health_index": 0.06,
     "top_sensors": [
       "s11",
       "reg4",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 107
   },
   {
     "wo_id": "WO-FD004-107",
     "engine": "FD004/unit107",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 69.4,
+    "severity": "P2_HIGH",
+    "rul_pred": 70.9,
     "rul_interval": [
-      25.6,
-      113.2
+      26.9,
+      114.9
     ],
     "health_index": 0.0,
     "top_sensors": [
+      "reg5",
       "s11",
-      "reg2",
-      "reg5"
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 41
   },
   {
     "wo_id": "WO-FD004-110",
     "engine": "FD004/unit110",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 85.3,
+    "severity": "P2_HIGH",
+    "rul_pred": 68.8,
     "rul_interval": [
-      41.5,
-      129.1
+      24.8,
+      112.8
     ],
-    "health_index": 0.07,
+    "health_index": 0.1,
     "top_sensors": [
-      "reg4",
-      "reg3",
+      "s14",
+      "cycle",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 59
   },
   {
     "wo_id": "WO-FD004-111",
     "engine": "FD004/unit111",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 24.4,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 17.6,
     "rul_interval": [
       0.0,
-      67.2
+      36.2
     ],
-    "health_index": 0.29,
+    "health_index": 0.3,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s11",
       "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 18
   },
   {
     "wo_id": "WO-FD004-113",
     "engine": "FD004/unit113",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 42.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 31.4,
     "rul_interval": [
       0.0,
-      85.4
+      65.0
     ],
-    "health_index": 0.25,
+    "health_index": 0.27,
     "top_sensors": [
-      "reg4",
       "s11",
-      "reg5"
+      "cycle",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 13
   },
   {
     "wo_id": "WO-FD004-114",
     "engine": "FD004/unit114",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 26.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 19.8,
     "rul_interval": [
-      0.0,
-      69.4
+      1.2,
+      38.4
     ],
-    "health_index": 0.21,
+    "health_index": 0.24,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "s11"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 14
   },
   {
     "wo_id": "WO-FD004-116",
     "engine": "FD004/unit116",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 38.6,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 20.7,
     "rul_interval": [
-      0.0,
-      81.3
+      2.0,
+      39.3
     ],
-    "health_index": 0.31,
+    "health_index": 0.27,
     "top_sensors": [
+      "cycle",
       "s15",
-      "s11",
-      "reg5"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 13
   },
   {
     "wo_id": "WO-FD004-118",
     "engine": "FD004/unit118",
     "severity": "P1_CRITICAL",
-    "rul_pred": 14.0,
+    "rul_pred": 18.6,
     "rul_interval": [
       0.0,
-      56.7
+      37.2
     ],
-    "health_index": 0.26,
+    "health_index": 0.27,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "s11"
+      "s14"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 8
   },
   {
     "wo_id": "WO-FD004-119",
     "engine": "FD004/unit119",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 61.4,
+    "severity": "P2_HIGH",
+    "rul_pred": 67.7,
     "rul_interval": [
-      17.6,
-      105.2
+      23.7,
+      111.7
     ],
-    "health_index": 0.03,
+    "health_index": 0.04,
     "top_sensors": [
       "reg4",
-      "s11",
-      "reg5"
+      "cycle",
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 109
   },
   {
     "wo_id": "WO-FD004-121",
     "engine": "FD004/unit121",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 35.6,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 44.8,
     "rul_interval": [
-      0.0,
-      78.3
+      11.3,
+      78.4
     ],
-    "health_index": 0.15,
+    "health_index": 0.16,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s15",
-      "s8"
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 41
   },
   {
     "wo_id": "WO-FD004-123",
     "engine": "FD004/unit123",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 40.5,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 29.6,
     "rul_interval": [
-      0.0,
-      83.2
+      11.0,
+      48.3
     ],
     "health_index": 0.09,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg5"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 23
   },
   {
     "wo_id": "WO-FD004-124",
     "engine": "FD004/unit124",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 70.8,
+    "severity": "P2_HIGH",
+    "rul_pred": 55.9,
     "rul_interval": [
-      27.0,
-      114.6
+      22.4,
+      89.5
     ],
-    "health_index": 0.06,
+    "health_index": 0.09,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg5"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 86
   },
   {
     "wo_id": "WO-FD004-126",
     "engine": "FD004/unit126",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 38.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 26.3,
     "rul_interval": [
-      0.0,
-      80.8
+      7.6,
+      44.9
     ],
     "health_index": 0.16,
     "top_sensors": [
       "reg4",
-      "s14",
+      "cycle",
+      "s14"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 15
+  },
+  {
+    "wo_id": "WO-FD004-130",
+    "engine": "FD004/unit130",
+    "severity": "P2_HIGH",
+    "rul_pred": 66.0,
+    "rul_interval": [
+      22.0,
+      110.0
+    ],
+    "health_index": 0.09,
+    "top_sensors": [
+      "s15",
+      "reg2",
       "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 15
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 165
+  },
+  {
+    "wo_id": "WO-FD004-131",
+    "engine": "FD004/unit131",
+    "severity": "P2_HIGH",
+    "rul_pred": 87.6,
+    "rul_interval": [
+      43.6,
+      131.6
+    ],
+    "health_index": 0.1,
+    "top_sensors": [
+      "reg4",
+      "cycle",
+      "s11"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 101
   },
   {
     "wo_id": "WO-FD004-134",
     "engine": "FD004/unit134",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 28.7,
     "rul_interval": [
-      0.0,
-      71.7
+      10.0,
+      47.3
     ],
     "health_index": 0.12,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
-      "reg5"
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 36
   },
   {
     "wo_id": "WO-FD004-135",
     "engine": "FD004/unit135",
     "severity": "P1_CRITICAL",
-    "rul_pred": 12.0,
+    "rul_pred": 10.2,
     "rul_interval": [
       0.0,
-      54.7
+      28.8
     ],
-    "health_index": 0.45,
+    "health_index": 0.39,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s11",
-      "s14"
+      "reg4"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 7
-  },
-  {
-    "wo_id": "WO-FD004-137",
-    "engine": "FD004/unit137",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 88.0,
-    "rul_interval": [
-      44.2,
-      131.8
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "reg4",
-      "reg3",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 159
   },
   {
     "wo_id": "WO-FD004-138",
     "engine": "FD004/unit138",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 94.1,
+    "severity": "P2_HIGH",
+    "rul_pred": 89.7,
     "rul_interval": [
-      63.1,
-      125.0
+      45.7,
+      133.7
     ],
-    "health_index": 0.04,
+    "health_index": 0.01,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "reg3",
-      "s14"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 88
   },
   {
     "wo_id": "WO-FD004-140",
     "engine": "FD004/unit140",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 69.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 79.6,
     "rul_interval": [
-      25.9,
-      113.5
+      35.6,
+      123.7
     ],
     "health_index": 1.0,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s15",
-      "reg5"
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 146
   },
   {
     "wo_id": "WO-FD004-143",
     "engine": "FD004/unit143",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 63.9,
+    "severity": "P2_HIGH",
+    "rul_pred": 85.7,
     "rul_interval": [
-      20.1,
-      107.7
+      41.7,
+      129.8
     ],
-    "health_index": 0.02,
+    "health_index": 0.04,
     "top_sensors": [
-      "reg4",
-      "s11",
+      "cycle",
+      "s14",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 53
   },
   {
     "wo_id": "WO-FD004-145",
     "engine": "FD004/unit145",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 79.9,
+    "severity": "P2_HIGH",
+    "rul_pred": 91.2,
     "rul_interval": [
-      36.1,
-      123.7
+      47.2,
+      135.3
     ],
-    "health_index": 0.11,
+    "health_index": 0.13,
     "top_sensors": [
       "s11",
-      "reg4",
-      "reg5"
+      "reg5",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 59
+  },
+  {
+    "wo_id": "WO-FD004-147",
+    "engine": "FD004/unit147",
+    "severity": "P2_HIGH",
+    "rul_pred": 91.4,
+    "rul_interval": [
+      47.4,
+      135.4
+    ],
+    "health_index": 0.03,
+    "top_sensors": [
+      "reg5",
+      "s14",
+      "reg2"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 56
   },
   {
     "wo_id": "WO-FD004-149",
     "engine": "FD004/unit149",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 73.7,
+    "severity": "P2_HIGH",
+    "rul_pred": 92.8,
     "rul_interval": [
-      29.9,
-      117.5
+      48.8,
+      136.9
     ],
-    "health_index": 0.08,
+    "health_index": 0.11,
     "top_sensors": [
       "reg4",
-      "reg3",
-      "reg5"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 76
   },
   {
     "wo_id": "WO-FD004-150",
     "engine": "FD004/unit150",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 39.8,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 38.5,
     "rul_interval": [
-      0.0,
-      82.6
+      5.0,
+      72.1
     ],
     "health_index": 0.37,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "reg5",
-      "cycle"
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 57
   },
   {
     "wo_id": "WO-FD004-151",
     "engine": "FD004/unit151",
     "severity": "P1_CRITICAL",
-    "rul_pred": 14.8,
+    "rul_pred": 14.2,
     "rul_interval": [
       0.0,
-      57.5
+      32.9
     ],
     "health_index": 0.24,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "s14"
+      "reg5"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 31
-  },
-  {
-    "wo_id": "WO-FD004-153",
-    "engine": "FD004/unit153",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 76.1,
-    "rul_interval": [
-      32.3,
-      119.9
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "reg4",
-      "reg5",
-      "cycle"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 173
   },
   {
     "wo_id": "WO-FD004-154",
     "engine": "FD004/unit154",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 51.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 41.3,
     "rul_interval": [
-      7.9,
-      95.5
+      7.8,
+      74.9
     ],
     "health_index": 0.0,
     "top_sensors": [
       "s11",
-      "reg2",
+      "reg5",
       "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 34
   },
   {
     "wo_id": "WO-FD004-155",
     "engine": "FD004/unit155",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 23.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 18.1,
     "rul_interval": [
       0.0,
-      66.4
+      36.7
     ],
-    "health_index": 0.13,
+    "health_index": 0.12,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s11",
-      "s15"
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 7
   },
   {
     "wo_id": "WO-FD004-158",
     "engine": "FD004/unit158",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 24.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 20.3,
     "rul_interval": [
-      0.0,
-      66.8
+      1.6,
+      38.9
     ],
-    "health_index": 0.34,
+    "health_index": 0.29,
     "top_sensors": [
       "s11",
       "reg4",
-      "s15"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 6
   },
   {
     "wo_id": "WO-FD004-159",
     "engine": "FD004/unit159",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 32.4,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 35.2,
     "rul_interval": [
-      0.0,
-      75.1
+      1.6,
+      68.7
     ],
-    "health_index": 0.11,
+    "health_index": 0.12,
     "top_sensors": [
       "s11",
       "cycle",
-      "reg2"
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 22
-  },
-  {
-    "wo_id": "WO-FD004-160",
-    "engine": "FD004/unit160",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 86.4,
-    "rul_interval": [
-      42.6,
-      130.2
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "reg4",
-      "reg5",
-      "s11"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 83
   },
   {
     "wo_id": "WO-FD004-172",
     "engine": "FD004/unit172",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 52.3,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 23.0,
     "rul_interval": [
-      8.5,
-      96.1
+      4.4,
+      41.7
     ],
-    "health_index": 0.55,
+    "health_index": 0.52,
     "top_sensors": [
-      "s8",
       "s15",
-      "reg2"
+      "cycle",
+      "s8"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
   },
   {
     "wo_id": "WO-FD004-173",
     "engine": "FD004/unit173",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.8,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 31.5,
     "rul_interval": [
       0.0,
-      72.5
+      65.1
     ],
     "health_index": 0.15,
     "top_sensors": [
       "s11",
       "reg4",
-      "s15"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 8
   },
   {
     "wo_id": "WO-FD004-174",
     "engine": "FD004/unit174",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 34.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 21.4,
     "rul_interval": [
-      0.0,
-      76.9
+      2.8,
+      40.1
     ],
-    "health_index": 0.15,
+    "health_index": 0.18,
     "top_sensors": [
       "s11",
       "reg4",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 10
   },
   {
     "wo_id": "WO-FD004-175",
     "engine": "FD004/unit175",
-    "severity": "HUMAN_REVIEW",
+    "severity": "P2_HIGH",
     "rul_pred": 77.3,
     "rul_interval": [
-      33.5,
-      121.1
+      33.3,
+      121.3
     ],
     "health_index": 0.0,
     "top_sensors": [
-      "s11",
       "reg5",
-      "reg2"
+      "s11",
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 123
   },
   {
     "wo_id": "WO-FD004-176",
     "engine": "FD004/unit176",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 74.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 62.2,
     "rul_interval": [
-      30.4,
-      118.1
+      18.2,
+      106.2
     ],
-    "health_index": 0.06,
+    "health_index": 0.05,
     "top_sensors": [
       "reg4",
-      "s14",
+      "cycle",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 103
   },
   {
     "wo_id": "WO-FD004-177",
     "engine": "FD004/unit177",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 72.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 40.2,
     "rul_interval": [
-      28.1,
-      115.8
+      6.7,
+      73.8
     ],
     "health_index": 0.0,
     "top_sensors": [
       "reg4",
-      "s11",
-      "reg5"
+      "cycle",
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
+  },
+  {
+    "wo_id": "WO-FD004-178",
+    "engine": "FD004/unit178",
+    "severity": "P2_HIGH",
+    "rul_pred": 87.7,
+    "rul_interval": [
+      43.6,
+      131.7
+    ],
+    "health_index": 0.0,
+    "top_sensors": [
+      "cycle",
+      "s14",
+      "reg4"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 106
   },
   {
     "wo_id": "WO-FD004-179",
     "engine": "FD004/unit179",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 18.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 16.3,
     "rul_interval": [
       0.0,
-      60.8
+      34.9
     ],
-    "health_index": 0.2,
+    "health_index": 0.23,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "s14"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 12
   },
   {
     "wo_id": "WO-FD004-180",
     "engine": "FD004/unit180",
     "severity": "P1_CRITICAL",
-    "rul_pred": 5.4,
+    "rul_pred": 21.4,
     "rul_interval": [
-      0.0,
-      48.1
+      2.7,
+      40.0
     ],
     "health_index": 0.28,
     "top_sensors": [
-      "reg4",
       "s11",
-      "s14"
+      "cycle",
+      "reg4"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 32
   },
   {
     "wo_id": "WO-FD004-181",
     "engine": "FD004/unit181",
     "severity": "P1_CRITICAL",
-    "rul_pred": 13.0,
+    "rul_pred": 21.1,
     "rul_interval": [
-      0.0,
-      55.7
+      2.4,
+      39.7
     ],
-    "health_index": 0.19,
+    "health_index": 0.17,
     "top_sensors": [
       "reg4",
-      "s11",
-      "reg5"
+      "cycle",
+      "s11"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 37
-  },
-  {
-    "wo_id": "WO-FD004-182",
-    "engine": "FD004/unit182",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 76.4,
-    "rul_interval": [
-      32.6,
-      120.2
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "s15",
-      "reg2",
-      "s11"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 116
   },
   {
     "wo_id": "WO-FD004-183",
     "engine": "FD004/unit183",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 39.5,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 13.5,
     "rul_interval": [
       0.0,
-      82.2
+      32.1
     ],
     "health_index": 0.32,
     "top_sensors": [
       "s11",
-      "s15",
-      "reg5"
+      "reg5",
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 15
   },
   {
     "wo_id": "WO-FD004-184",
     "engine": "FD004/unit184",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 33.9,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 29.6,
     "rul_interval": [
-      0.0,
-      76.6
+      11.0,
+      48.3
     ],
-    "health_index": 0.17,
+    "health_index": 0.15,
     "top_sensors": [
-      "reg4",
       "s11",
-      "reg5"
+      "reg4",
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 10
   },
   {
     "wo_id": "WO-FD004-185",
     "engine": "FD004/unit185",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 67.0,
+    "severity": "P2_HIGH",
+    "rul_pred": 59.3,
     "rul_interval": [
-      23.2,
-      110.9
+      25.8,
+      92.9
     ],
-    "health_index": 0.01,
+    "health_index": 0.0,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s11",
-      "reg5"
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 46
   },
   {
     "wo_id": "WO-FD004-187",
     "engine": "FD004/unit187",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 80.1,
+    "severity": "P2_HIGH",
+    "rul_pred": 86.3,
     "rul_interval": [
-      36.3,
-      123.9
+      42.3,
+      130.4
     ],
     "health_index": 0.0,
     "top_sensors": [
       "s15",
       "s11",
-      "reg2"
+      "s8"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 24
   },
   {
     "wo_id": "WO-FD004-192",
     "engine": "FD004/unit192",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 57.2,
+    "severity": "P2_HIGH",
+    "rul_pred": 73.7,
     "rul_interval": [
-      13.4,
-      101.0
+      29.7,
+      117.8
     ],
-    "health_index": 0.32,
+    "health_index": 0.34,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg3"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 71
-  },
-  {
-    "wo_id": "WO-FD004-193",
-    "engine": "FD004/unit193",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 60.2,
-    "rul_interval": [
-      16.4,
-      104.0
-    ],
-    "health_index": 0.24,
-    "top_sensors": [
-      "reg4",
-      "reg3",
+      "cycle",
       "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 104
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 71
   },
   {
     "wo_id": "WO-FD004-194",
     "engine": "FD004/unit194",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 24.3,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 18.6,
     "rul_interval": [
       0.0,
-      67.0
+      37.2
     ],
-    "health_index": 0.32,
+    "health_index": 0.35,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg5"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 15
   },
   {
     "wo_id": "WO-FD004-197",
     "engine": "FD004/unit197",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 50.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 40.7,
     "rul_interval": [
-      6.9,
-      94.5
+      7.2,
+      74.3
     ],
-    "health_index": 0.11,
+    "health_index": 0.09,
     "top_sensors": [
       "reg4",
-      "s14",
-      "reg5"
+      "cycle",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 36
   },
   {
     "wo_id": "WO-FD004-198",
     "engine": "FD004/unit198",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 43.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 47.2,
     "rul_interval": [
-      0.3,
-      85.8
+      13.7,
+      80.8
     ],
-    "health_index": 0.15,
+    "health_index": 0.13,
     "top_sensors": [
       "s11",
-      "reg3",
-      "s15"
+      "s15",
+      "s13"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 11
   },
   {
     "wo_id": "WO-FD004-199",
     "engine": "FD004/unit199",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 63.6,
+    "severity": "P2_HIGH",
+    "rul_pred": 73.0,
     "rul_interval": [
-      19.8,
-      107.4
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 92
-  },
-  {
-    "wo_id": "WO-FD004-200",
-    "engine": "FD004/unit200",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 80.2,
-    "rul_interval": [
-      36.4,
-      124.0
-    ],
-    "health_index": 0.18,
-    "top_sensors": [
-      "s11",
-      "reg2",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 96
-  },
-  {
-    "wo_id": "WO-FD004-202",
-    "engine": "FD004/unit202",
-    "severity": "P1_CRITICAL",
-    "rul_pred": 9.6,
-    "rul_interval": [
-      0.0,
-      52.3
-    ],
-    "health_index": 0.15,
-    "top_sensors": [
-      "reg4",
-      "s11",
-      "s14"
-    ],
-    "action": "Ground unit and inspect",
-    "due_within_cycles": 5,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 13
-  },
-  {
-    "wo_id": "WO-FD004-205",
-    "engine": "FD004/unit205",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 88.2,
-    "rul_interval": [
-      44.4,
-      132.1
-    ],
-    "health_index": 0.06,
-    "top_sensors": [
-      "s11",
-      "reg5",
-      "reg2"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 154
-  },
-  {
-    "wo_id": "WO-FD004-206",
-    "engine": "FD004/unit206",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 77.6,
-    "rul_interval": [
-      33.8,
-      121.4
-    ],
-    "health_index": 0.21,
-    "top_sensors": [
-      "reg4",
-      "reg3",
-      "reg5"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 109
-  },
-  {
-    "wo_id": "WO-FD004-207",
-    "engine": "FD004/unit207",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 85.1,
-    "rul_interval": [
-      41.3,
-      128.9
+      29.0,
+      117.1
     ],
     "health_index": 0.0,
     "top_sensors": [
@@ -2254,19 +2174,79 @@
       "s11",
       "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 116
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 92
+  },
+  {
+    "wo_id": "WO-FD004-200",
+    "engine": "FD004/unit200",
+    "severity": "P2_HIGH",
+    "rul_pred": 72.1,
+    "rul_interval": [
+      28.1,
+      116.1
+    ],
+    "health_index": 0.18,
+    "top_sensors": [
+      "s11",
+      "reg5",
+      "s15"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 96
+  },
+  {
+    "wo_id": "WO-FD004-202",
+    "engine": "FD004/unit202",
+    "severity": "P1_CRITICAL",
+    "rul_pred": 10.4,
+    "rul_interval": [
+      0.0,
+      29.0
+    ],
+    "health_index": 0.16,
+    "top_sensors": [
+      "cycle",
+      "reg4",
+      "s11"
+    ],
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 13
+  },
+  {
+    "wo_id": "WO-FD004-205",
+    "engine": "FD004/unit205",
+    "severity": "P2_HIGH",
+    "rul_pred": 70.1,
+    "rul_interval": [
+      26.1,
+      114.1
+    ],
+    "health_index": 0.06,
+    "top_sensors": [
+      "reg5",
+      "s11",
+      "s13"
+    ],
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 154
   },
   {
     "wo_id": "WO-FD004-208",
     "engine": "FD004/unit208",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 75.6,
+    "severity": "P2_HIGH",
+    "rul_pred": 70.7,
     "rul_interval": [
-      31.8,
-      119.5
+      26.7,
+      114.7
     ],
     "health_index": 0.12,
     "top_sensors": [
@@ -2274,429 +2254,349 @@
       "s11",
       "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 91
   },
   {
     "wo_id": "WO-FD004-209",
     "engine": "FD004/unit209",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 18.9,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 32.8,
     "rul_interval": [
       0.0,
-      61.6
+      66.3
     ],
-    "health_index": 0.08,
+    "health_index": 0.05,
     "top_sensors": [
-      "reg4",
       "s11",
-      "s15"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 11
-  },
-  {
-    "wo_id": "WO-FD004-212",
-    "engine": "FD004/unit212",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 75.7,
-    "rul_interval": [
-      31.9,
-      119.5
-    ],
-    "health_index": 0.27,
-    "top_sensors": [
       "reg4",
-      "reg5",
-      "reg3"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 76
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
+    "true_rul": 11
   },
   {
     "wo_id": "WO-FD004-213",
     "engine": "FD004/unit213",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 36.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 39.4,
     "rul_interval": [
-      0.0,
-      78.9
+      5.8,
+      72.9
     ],
-    "health_index": 0.37,
+    "health_index": 0.33,
     "top_sensors": [
-      "reg4",
-      "s11",
-      "s14"
+      "cycle",
+      "s14",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 14
   },
   {
     "wo_id": "WO-FD004-216",
     "engine": "FD004/unit216",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 21.1,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 14.7,
     "rul_interval": [
       0.0,
-      63.8
+      33.3
     ],
-    "health_index": 0.07,
+    "health_index": 0.05,
     "top_sensors": [
-      "reg4",
       "s11",
-      "s15"
+      "cycle",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 17
   },
   {
     "wo_id": "WO-FD004-217",
     "engine": "FD004/unit217",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 67.0,
+    "severity": "P2_HIGH",
+    "rul_pred": 69.2,
     "rul_interval": [
-      23.2,
-      110.8
+      25.2,
+      113.2
     ],
     "health_index": 0.0,
     "top_sensors": [
-      "reg3",
+      "cycle",
       "s15",
       "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 66
   },
   {
     "wo_id": "WO-FD004-219",
     "engine": "FD004/unit219",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 68.1,
+    "severity": "P2_HIGH",
+    "rul_pred": 65.1,
     "rul_interval": [
-      24.3,
-      112.0
+      21.0,
+      109.1
     ],
-    "health_index": 0.04,
+    "health_index": 0.03,
     "top_sensors": [
       "s11",
-      "reg4",
-      "reg5"
+      "reg5",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 41
   },
   {
     "wo_id": "WO-FD004-222",
     "engine": "FD004/unit222",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 76.4,
+    "severity": "P2_HIGH",
+    "rul_pred": 59.7,
     "rul_interval": [
-      32.6,
-      120.2
+      26.2,
+      93.3
     ],
-    "health_index": 0.1,
+    "health_index": 0.14,
     "top_sensors": [
-      "reg4",
-      "reg3",
-      "s14"
+      "s14",
+      "cycle",
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Schedule at next service window",
+    "due_within_cycles": 25,
+    "model_version": "FD004-ens-v2",
     "true_rul": 39
   },
   {
     "wo_id": "WO-FD004-223",
     "engine": "FD004/unit223",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 55.3,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 64.0,
     "rul_interval": [
-      11.5,
-      99.1
+      20.0,
+      108.0
     ],
-    "health_index": 0.02,
+    "health_index": 0.04,
     "top_sensors": [
-      "reg4",
       "cycle",
-      "reg3"
+      "reg4",
+      "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 58
   },
   {
     "wo_id": "WO-FD004-224",
     "engine": "FD004/unit224",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 48.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 50.2,
     "rul_interval": [
-      5.5,
-      90.9
+      16.7,
+      83.8
     ],
-    "health_index": 0.16,
+    "health_index": 0.13,
     "top_sensors": [
       "s11",
-      "reg5",
-      "cycle"
+      "cycle",
+      "reg5"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 14
   },
   {
     "wo_id": "WO-FD004-231",
     "engine": "FD004/unit231",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 58.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 63.9,
     "rul_interval": [
-      14.4,
-      102.0
+      19.9,
+      108.0
     ],
-    "health_index": 0.21,
+    "health_index": 0.19,
     "top_sensors": [
       "reg4",
-      "s11",
-      "reg3"
+      "cycle",
+      "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 33
   },
   {
     "wo_id": "WO-FD004-234",
     "engine": "FD004/unit234",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 79.8,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 56.7,
     "rul_interval": [
-      35.9,
-      123.6
+      23.2,
+      90.3
     ],
     "health_index": 1.0,
     "top_sensors": [
       "s11",
       "reg4",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 68
   },
   {
     "wo_id": "WO-FD004-235",
     "engine": "FD004/unit235",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 36.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 30.9,
     "rul_interval": [
       0.0,
-      78.7
+      64.4
     ],
     "health_index": 0.15,
     "top_sensors": [
-      "reg4",
+      "cycle",
       "s14",
-      "s13"
+      "reg4"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 24
   },
   {
     "wo_id": "WO-FD004-237",
     "engine": "FD004/unit237",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.4,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 23.4,
     "rul_interval": [
-      0.0,
-      72.1
+      4.8,
+      42.0
     ],
-    "health_index": 0.07,
+    "health_index": 0.04,
     "top_sensors": [
       "s11",
       "reg4",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 18
   },
   {
     "wo_id": "WO-FD004-238",
     "engine": "FD004/unit238",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 49.5,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 34.0,
     "rul_interval": [
-      6.8,
-      92.2
+      0.5,
+      67.6
     ],
-    "health_index": 0.52,
+    "health_index": 0.5,
     "top_sensors": [
       "s11",
-      "s15",
-      "reg5"
+      "cycle",
+      "s15"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 16
-  },
-  {
-    "wo_id": "WO-FD004-239",
-    "engine": "FD004/unit239",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 105.0,
-    "rul_interval": [
-      74.0,
-      135.9
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "s7",
-      "reg1",
-      "s11"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 166
   },
   {
     "wo_id": "WO-FD004-240",
     "engine": "FD004/unit240",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 29.7,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 33.6,
     "rul_interval": [
-      0.0,
-      72.4
+      0.1,
+      67.2
     ],
     "health_index": 0.38,
     "top_sensors": [
       "reg4",
-      "s11",
+      "cycle",
       "s14"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 98
   },
   {
     "wo_id": "WO-FD004-242",
     "engine": "FD004/unit242",
     "severity": "HUMAN_REVIEW",
-    "rul_pred": 112.1,
+    "rul_pred": 105.2,
     "rul_interval": [
-      81.1,
-      143.1
+      76.3,
+      134.2
     ],
     "health_index": 1.0,
     "top_sensors": [
       "s11",
-      "reg2",
-      "s21"
+      "s21",
+      "reg2"
     ],
     "action": "Exception queue: engineer review",
     "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "model_version": "FD004-ens-v2",
     "true_rul": 81
   },
   {
     "wo_id": "WO-FD004-244",
     "engine": "FD004/unit244",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 43.2,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 45.2,
     "rul_interval": [
-      0.5,
-      85.9
+      11.7,
+      78.7
     ],
     "health_index": 0.13,
     "top_sensors": [
+      "cycle",
       "reg4",
-      "s14",
       "s11"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 35
-  },
-  {
-    "wo_id": "WO-FD004-245",
-    "engine": "FD004/unit245",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 99.8,
-    "rul_interval": [
-      68.9,
-      130.8
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "s9",
-      "reg1",
-      "s13"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 131
-  },
-  {
-    "wo_id": "WO-FD004-247",
-    "engine": "FD004/unit247",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 86.0,
-    "rul_interval": [
-      42.2,
-      129.8
-    ],
-    "health_index": 0.0,
-    "top_sensors": [
-      "s11",
-      "reg2",
-      "s21"
-    ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
-    "true_rul": 112
   },
   {
     "wo_id": "WO-FD004-248",
     "engine": "FD004/unit248",
-    "severity": "HUMAN_REVIEW",
-    "rul_pred": 19.0,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 17.4,
     "rul_interval": [
       0.0,
-      61.7
+      36.0
     ],
-    "health_index": 0.21,
+    "health_index": 0.17,
     "top_sensors": [
       "reg4",
       "s11",
-      "reg5"
+      "cycle"
     ],
-    "action": "Exception queue: engineer review",
-    "due_within_cycles": null,
-    "model_version": "FD004-ens-v1",
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
+    "model_version": "FD004-ens-v2",
     "true_rul": 26
   }
 ]

@@ -5,9 +5,20 @@ New batch: FD003 engines arrive (HPC + Fan faults) -> PSI drift check -> challen
 -> both evaluated on the same held-out engines -> promote only if better. Logged to MLflow registry.
 """
 import json
-import numpy as np, pandas as pd, mlflow
+import numpy as np, pandas as pd, mlflow, lightgbm as lgb
 from mlflow import MlflowClient
-from pipeline import load, clean, RegimeNorm, features, train_lgb, nasa_score, SENS, CAP, ROOT, OUT
+from pipeline import load, clean, RegimeNorm, nasa_score, SENS, CAP, CRIT, ROOT, OUT
+import exp_lib as E
+from run_final import GROUPS, CRIT_W      # same feature set / loss weighting as the production pipeline
+
+
+def features(df, k):
+    return E.build_features(df, GROUPS, k)
+
+
+def train_lgb(F, y_raw):
+    w = 1.0 + CRIT_W * (y_raw <= CRIT)
+    return lgb.LGBMRegressor(**E.LGB_DEFAULT).fit(F, np.minimum(y_raw, CAP), sample_weight=w)
 
 
 def psi(ref, new, bins=10):
@@ -36,7 +47,7 @@ b_tr, b_te, b_rul = prep("FD003", 1000)
 # ---- champion on fleet A
 norm_a = RegimeNorm().fit(a_tr, 1)
 Fa = features(norm_a.transform(a_tr), 1)
-champ = train_lgb(Fa, np.minimum(a_tr.RUL.values, CAP))
+champ = train_lgb(Fa, a_tr.RUL.values)
 
 # ---- new batch arrives: drift check on regime-normalised sensors, last 30 cycles of each new engine
 na, nb = norm_a.transform(a_tr), norm_a.transform(b_tr)
@@ -67,10 +78,10 @@ client.set_registered_model_alias(NAME, "champion", v1)
 
 result = dict(drift_trigger=trigger, drifted_sensors=drifted, champion=champ_eval)
 if trigger:
-    ab = pd.concat([a_tr, b_tr])
+    ab = pd.concat([a_tr, b_tr], ignore_index=True)
     norm_ab = RegimeNorm().fit(ab, 1)
     Fab = features(norm_ab.transform(ab), 1)
-    chall = train_lgb(Fab, np.minimum(ab.RUL.values, CAP))
+    chall = train_lgb(Fab, ab.RUL.values)
     chall_eval = evaluate(chall, norm_ab)
     promote = chall_eval["mean_rmse"] < champ_eval["mean_rmse"] and chall_eval["total_nasa"] < champ_eval["total_nasa"]
     with mlflow.start_run(run_name="challenger-FD001+FD003"):
