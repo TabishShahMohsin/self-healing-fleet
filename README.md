@@ -56,7 +56,8 @@ All runs are in `out/experiments.csv`.
 
 Tried and dropped: running min/max of deltas (worse), other EWMA rates, slow-trend features, regime id as a feature,
 per-regime EWMA state, RUL cap 115 or 135 (125 is best), slower or larger LightGBM, a CNN without the age channel
-(14.8 vs 12.4 RMSE on FD001), and blending that CNN in (hurt).
+(14.8 vs 12.4 RMSE on FD001), blending that CNN in (hurt), and averaging each engine's predictions over its last 5-50 cycles
+(no gain: the errors are persistent per engine, not per-cycle noise).
 
 ## Run it
 
@@ -69,11 +70,19 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
 `exp_lib.py` / `experiments.py` / `exp_cnn.py` hold the cross-validation harness used for the iteration log
-(`python experiments.py E1_+baseline_delta --fds=FD001,FD004`). Out-of-fold predictions are cached in `out/cache/`
-(git-ignored) and recomputed if missing.
+(`python experiments.py E1_+baseline_delta --fds=FD001,FD004`). Out-of-fold predictions are cached by configuration hash in
+`out/cache/final_oof_*.npy` (committed, so unchanged models are never re-cross-validated; change a config and the cache key changes).
+`python assets/make_banner.py` redraws the banner above from `out/*.json`.
 
 Outputs land in `out/`: `metrics.json`, `pred_FDxxx.csv` (predictions + intervals + severity per test engine),
 `workorders_FDxxx.json` (agent output), `health_FDxxx.csv` (degradation trajectories), `retrain_demo.json`, `experiments.csv`.
+
+## Nightly improvement loop
+
+A scheduled job tries one idea from `nightly/BACKLOG.md` every night at a random time between 00:00 and 04:00 IST.
+Rules are in `nightly/PLAYBOOK.md`: the idea is judged on cross-validation only (`nightly/gate.py`: mean RMSE must improve by at least 0.15
+with no subset worse by more than 0.3), never on the test sets. Only an accepted idea triggers a full run, a README/banner refresh and a push;
+rejected ideas are logged in `nightly/BACKLOG.md` and `nightly/LOG.md`.
 
 ## Known limitations / next steps
 

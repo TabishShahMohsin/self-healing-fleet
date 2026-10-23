@@ -10,7 +10,7 @@ sets are touched once, at the very end, with frozen models.
   4. final models refit on 100% of training engines, evaluated once on the test set
   5. Isolation-Forest health index, triage agent, work orders, MLflow logging
 """
-import sys, json, time
+import sys, json, time, hashlib
 import numpy as np, pandas as pd, lightgbm as lgb, mlflow
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import average_precision_score
@@ -21,7 +21,18 @@ GROUPS = {"base", "delta", "ms"}                       # raw+rolling stats, per-
 CRIT_W = 3.0                                           # extra sample weight for the last 30 cycles of life
 CNN_EPOCHS = {"FD001": 30, "FD002": 25, "FD003": 30, "FD004": 25}
 EDGES = (0, 30, 60, 100)                               # Mondrian bins on predicted RUL
+LGB_SEEDS = 1                                          # LightGBM seeds averaged (bagging)
+FEATURES_VERSION = "v1"                                # bump when exp_lib.engine_feats / preprocessing changes
+CNN_VERSION = "gated-v1"                               # bump when exp_cnn architecture / inputs change
 CACHE = E.CACHE
+
+
+def _key(kind, fd):
+    """Cache file name that changes whenever the configuration behind an OOF prediction changes."""
+    cfg = (dict(groups=sorted(GROUPS), crit_w=CRIT_W, lgb=E.LGB_DEFAULT, seeds=LGB_SEEDS, feat=FEATURES_VERSION) if kind == "lgb"
+           else dict(epochs=CNN_EPOCHS[fd], cnn=CNN_VERSION, feat=FEATURES_VERSION))
+    h = hashlib.md5(json.dumps(cfg, sort_keys=True, default=str).encode()).hexdigest()[:8]
+    return f"final_oof_{kind}_{fd}_{h}.npy"
 
 
 def _cached(name, fn, refresh):
@@ -32,16 +43,14 @@ def _cached(name, fn, refresh):
 
 
 def oof_predictions(fd, refresh=False):
-    """OOF RUL predictions of both models on the training engines (same folds for both)."""
+    """OOF RUL predictions of both models on the training engines (same folds for both).
+    Cached by configuration hash (committed to git), so unchanged models are never re-cross-validated."""
     d = E.prep(fd)
     def _lgb():
-        _, o, _ = E.cv_lgb(fd, GROUPS, crit_w=CRIT_W); return o
+        _, o, _ = E.cv_lgb(fd, GROUPS, crit_w=CRIT_W, seeds=LGB_SEEDS); return o
     def _cnn():
-        legacy = CACHE / f"oof_C_gated_epochs{CNN_EPOCHS[fd]}_{fd}.npy"      # identical run from the experiment log
-        if legacy.exists() and not refresh:
-            return np.load(legacy)
         _, o = C.cv_cnn(fd, "gated", epochs=CNN_EPOCHS[fd]); return o
-    return d, _cached(f"final_oof_lgb_{fd}.npy", _lgb, refresh), _cached(f"final_oof_cnn_{fd}.npy", _cnn, refresh)
+    return d, _cached(_key("lgb", fd), _lgb, refresh), _cached(_key("cnn", fd), _cnn, refresh)
 
 
 def health_index(trn, life_frac=0.25, fit_mask=None):
@@ -129,13 +138,15 @@ def run(fd, refresh=False, oof_only=False):
     # ---------------- 2. final models on 100% of training engines
     Ftr = E.build_features(tr, GROUPS, k); Fte = E.build_features(te, GROUPS, k)
     w_s = 1.0 + CRIT_W * (tr["RUL"].values <= CRIT)
-    gbm = lgb.LGBMRegressor(**E.LGB_DEFAULT).fit(Ftr, y_all, sample_weight=w_s)
+    gbms = [lgb.LGBMRegressor(**{**E.LGB_DEFAULT, "random_state": E.LGB_DEFAULT["random_state"] + i}).fit(Ftr, y_all, sample_weight=w_s)
+            for i in range(LGB_SEEDS)]
+    gbm = gbms[0]                                       # used for SHAP-style contributions and MLflow
     A_tr, b_tr = C.build_arrays(tr, k, "gated"); A_te, b_te = C.build_arrays(te, k, "gated")
     net = C.fit(A_tr, b_tr, y_all, np.ones(len(tr)), np.arange(len(tr)), CNN_EPOCHS[fd], seed=0)
 
     # ---------------- 3. one frozen evaluation on the official test set (last cycle of every engine)
     last = te.groupby("unit").tail(1).index; lp = te.index.get_indexer(last)
-    p_g = np.clip(gbm.predict(Fte.loc[last]), 0, None)
+    p_g = np.clip(np.mean([g.predict(Fte.loc[last]) for g in gbms], axis=0), 0, None)
     p_c = np.clip(C.predict(net, A_te, b_te, lp), 0, None)
     p_te = blend(p_g, p_c)
     y_te = np.minimum(rul_true, CAP)
@@ -208,9 +219,9 @@ if __name__ == "__main__":
     mlflow.set_tracking_uri(f"sqlite:///{ROOT/'mlflow.db'}")
     mlflow.set_experiment("self-healing-fleet")
     fds = [a for a in sys.argv[1:] if a.startswith("FD")] or ["FD001", "FD002", "FD003", "FD004"]
-    f = OUT / "metrics.json"
+    oof_only = "--oof-only" in sys.argv                 # cross-validation view only: never touches the test sets
+    f = OUT / ("oof_only.json" if oof_only else "metrics.json")
     res = json.loads(f.read_text()) if f.exists() and len(fds) < 4 else {}
     for fd in fds:
-        res[fd] = run(fd, "--refresh" in sys.argv, "--oof-only" in sys.argv)
-        if "--oof-only" not in sys.argv:
-            f.write_text(json.dumps(res, indent=2))
+        res[fd] = run(fd, "--refresh" in sys.argv, oof_only)
+        f.write_text(json.dumps(res, indent=2))

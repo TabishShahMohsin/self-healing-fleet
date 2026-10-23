@@ -120,7 +120,7 @@ LGB_DEFAULT = dict(n_estimators=400, learning_rate=0.05, num_leaves=31, min_chil
                    subsample=0.8, subsample_freq=1, colsample_bytree=0.5, random_state=42, verbose=-1, n_jobs=2)
 
 
-def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5):
+def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1):
     d = prep(fd, ewma, ref); tr = d["tr"]
     F = build_features(tr, groups, d["k"])
     y = np.minimum(tr["RUL"].values, cap)
@@ -129,8 +129,8 @@ def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_f
     pr = {**LGB_DEFAULT, **(params or {})}
     for tr_u, va_u in folds_for(units, n_folds):
         m_tr = tr["unit"].isin(tr_u).values; m_va = ~m_tr
-        mdl = lgb.LGBMRegressor(**pr).fit(F[m_tr], y[m_tr], sample_weight=w[m_tr])
-        oof[m_va] = mdl.predict(F[m_va])
+        oof[m_va] = np.mean([lgb.LGBMRegressor(**{**pr, "random_state": pr["random_state"] + s_}).fit(
+            F[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(F[m_va]) for s_ in range(seeds)], axis=0)
     return tr, oof, F.shape[1]
 
 

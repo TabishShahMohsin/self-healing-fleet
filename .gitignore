@@ -3,5 +3,7 @@ mlruns/
 mlartifacts/
 __pycache__/
 *.pyc
-out/cache/
+out/cache/*
+!out/cache/final_oof_*.npy
 out/*.log
+out/oof_only.json

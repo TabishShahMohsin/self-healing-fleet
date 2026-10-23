@@ -31,6 +31,9 @@ CFG.update({
  "E11_slow_lr":    dict(groups=M, params=dict(n_jobs=1, n_estimators=800, learning_rate=0.025, num_leaves=15, min_child_samples=80, colsample_bytree=0.4)),
  "E11b_big":       dict(groups=M, params=dict(n_jobs=1, n_estimators=600, learning_rate=0.03, num_leaves=63, min_child_samples=30)),
 })
+CFG.update({
+ "E12_bag5_critw3": dict(groups=M, crit_w=3.0, seeds=5),
+})
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":

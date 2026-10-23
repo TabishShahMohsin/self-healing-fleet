@@ -37,7 +37,7 @@
     "agent_false_p1": 0,
     "n_urgent": 16,
     "human_review_rate": 0.01,
-    "runtime_s": 56.2,
+    "runtime_s": 61.5,
     "sev_counts": {
       "HUMAN_REVIEW": 1,
       "NORMAL": 11,
@@ -84,7 +84,7 @@
     "agent_false_p1": 5,
     "n_urgent": 53,
     "human_review_rate": 0.019305019305019305,
-    "runtime_s": 191.8,
+    "runtime_s": 151.8,
     "sev_counts": {
       "HUMAN_REVIEW": 5,
       "P1_CRITICAL": 83,
@@ -130,7 +130,7 @@
     "agent_false_p1": 1,
     "n_urgent": 14,
     "human_review_rate": 0.02,
-    "runtime_s": 57.5,
+    "runtime_s": 65.8,
     "sev_counts": {
       "HUMAN_REVIEW": 2,
       "NORMAL": 24,
@@ -177,7 +177,7 @@
     "agent_false_p1": 11,
     "n_urgent": 40,
     "human_review_rate": 0.008064516129032258,
-    "runtime_s": 160.1,
+    "runtime_s": 176.4,
     "sev_counts": {
       "HUMAN_REVIEW": 2,
       "NORMAL": 1,
