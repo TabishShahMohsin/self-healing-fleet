@@ -1,3 +1,5 @@
+![Early PoC results: RMSE, interval coverage, urgent-engine detection, auto-retrain and a real work order on NASA C-MAPSS FD001-FD004](assets/banner.png)
+
 # Self-Healing Fleet: predictive maintenance PoC
 
 Early proof of concept for **Tata Elxsi TELIPORT Season 4, Case Study 1** (Team Elxsirs, AMU).
