@@ -6,7 +6,7 @@ Current champion: see `nightly/champion.json`.
 | # | Idea | How | Status |
 |---|---|---|---|
 | 1 | LightGBM seed bagging (5 seeds) | `LGB_SEEDS` in run_final.py, `seeds=5` in cv_lgb | rejected: FD001 9.49 -> 9.33, FD004 20.89 -> 20.87 for 5x the cost (FD002/FD003 not run) |
-| 2 | Baseline window length for the per-engine delta (10 / 25 / 40 cycles instead of 15) | parameterise `engine_feats` | todo |
+| 2 | Baseline window length for the per-engine delta (10 / 25 / 40 cycles instead of 15) | parameterise `engine_feats` | accepted: window 40 (bw=10: +0.15 worse; bw=25: -0.14; bw=40: -0.19 CV RMSE mean, ens -0.19); test RMSE ens 9.6 / 16.4 / 10.0 / 20.4 |
 | 3 | LightGBM random search on FD002/FD004 (num_leaves, min_child_samples, colsample, reg_lambda, learning rate) | 12 random configs, then gate the best | todo |
 | 4 | Extra diverse ensemble member: ExtraTreesRegressor or HistGradientBoosting on the same features | OOF-blend weight tuned like the CNN | todo |
 | 5 | Per-engine noise features: early-life std and slope of each sensor (first 30 cycles) | new feature group "early" | todo |

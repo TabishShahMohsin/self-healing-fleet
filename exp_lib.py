@@ -32,7 +32,7 @@ def _roll_sum(cs, w):
     return cs[t] - cs[lo], np.minimum(t, w)
 
 
-def engine_feats(X, cyc, groups, reg=None, k=1):
+def engine_feats(X, cyc, groups, reg=None, k=1, bw=15):
     T, S = X.shape
     cs = np.vstack([np.zeros((1, S)), np.cumsum(X, 0)])
     cs2 = np.vstack([np.zeros((1, S)), np.cumsum(X ** 2, 0)])
@@ -64,20 +64,20 @@ def engine_feats(X, cyc, groups, reg=None, k=1):
     if "base" in groups:
         add(mean(10), "m10"); add(mean(30), "m30"); add(std(30), "sd30"); add(slope(30), "sl30")
     if "delta" in groups or "ext" in groups:
-        n0 = np.minimum(np.arange(1, T + 1), 15)[:, None]
-        b = np.where(np.arange(T)[:, None] < 15, cs[1:] / n0, cs[min(15, T)] / min(15, T))
+        n0 = np.minimum(np.arange(1, T + 1), bw)[:, None]
+        b = np.where(np.arange(T)[:, None] < bw, cs[1:] / n0, cs[min(bw, T)] / min(bw, T))
         d = X - b
         if "delta" in groups: add(d, "d")
         if "ext" in groups:
             add(np.maximum.accumulate(d, 0), "dmax"); add(np.minimum.accumulate(d, 0), "dmin")
     if "slow" in groups:
-        n0 = np.minimum(np.arange(1, T + 1), 15)[:, None]
-        b = np.where(np.arange(T)[:, None] < 15, cs[1:] / n0, cs[min(15, T)] / min(15, T))
+        n0 = np.minimum(np.arange(1, T + 1), bw)[:, None]
+        b = np.where(np.arange(T)[:, None] < bw, cs[1:] / n0, cs[min(bw, T)] / min(bw, T))
         dd = pd.DataFrame(X - b)
         add(dd.ewm(alpha=0.1).mean().values, "e10"); add(dd.ewm(alpha=0.03).mean().values, "e03"); add(slope(50), "sl50")
     if "rwise" in groups:   # per-regime EWMA state of baseline-deltas (smoothing only within the same operating condition)
-        n0 = np.minimum(np.arange(1, T + 1), 15)[:, None]
-        b = np.where(np.arange(T)[:, None] < 15, cs[1:] / n0, cs[min(15, T)] / min(15, T))
+        n0 = np.minimum(np.arange(1, T + 1), bw)[:, None]
+        b = np.where(np.arange(T)[:, None] < bw, cs[1:] / n0, cs[min(bw, T)] / min(bw, T))
         dd = X - b
         for r in range(k):
             Dr = pd.DataFrame(np.where((reg == r)[:, None], dd, np.nan))
@@ -87,10 +87,10 @@ def engine_feats(X, cyc, groups, reg=None, k=1):
     return np.hstack(out).astype(np.float32), names
 
 
-def build_features(df, groups, k):
+def build_features(df, groups, k, bw=15):
     cols, names, parts = None, None, []
     for u, d in df.groupby("unit", sort=False):
-        M, names = engine_feats(d[SENS].values.astype(np.float64), d["cycle"].values, groups, d["regime"].values, k)
+        M, names = engine_feats(d[SENS].values.astype(np.float64), d["cycle"].values, groups, d["regime"].values, k, bw)
         parts.append(M)
     F = pd.DataFrame(np.vstack(parts), columns=names, index=df.index)
     F["cycle"] = df["cycle"].values
@@ -120,9 +120,9 @@ LGB_DEFAULT = dict(n_estimators=400, learning_rate=0.05, num_leaves=31, min_chil
                    subsample=0.8, subsample_freq=1, colsample_bytree=0.5, random_state=42, verbose=-1, n_jobs=2)
 
 
-def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1):
+def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1, bw=15):
     d = prep(fd, ewma, ref); tr = d["tr"]
-    F = build_features(tr, groups, d["k"])
+    F = build_features(tr, groups, d["k"], bw)
     y = np.minimum(tr["RUL"].values, cap)
     w = 1.0 + crit_w * (tr["RUL"].values <= P.CRIT)
     units = tr["unit"].unique(); oof = np.zeros(len(tr))

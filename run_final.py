@@ -21,6 +21,7 @@ GROUPS = {"base", "delta", "ms"}                       # raw+rolling stats, per-
 CRIT_W = 3.0                                           # extra sample weight for the last 30 cycles of life
 CNN_EPOCHS = {"FD001": 30, "FD002": 25, "FD003": 30, "FD004": 25}
 EDGES = (0, 30, 60, 100)                               # Mondrian bins on predicted RUL
+BASELINE_WIN = 40                                      # cycles averaged for the per-engine baseline of the delta features
 LGB_SEEDS = 1                                          # LightGBM seeds averaged (bagging)
 FEATURES_VERSION = "v1"                                # bump when exp_lib.engine_feats / preprocessing changes
 CNN_VERSION = "gated-v1"                               # bump when exp_cnn architecture / inputs change
@@ -29,7 +30,7 @@ CACHE = E.CACHE
 
 def _key(kind, fd):
     """Cache file name that changes whenever the configuration behind an OOF prediction changes."""
-    cfg = (dict(groups=sorted(GROUPS), crit_w=CRIT_W, lgb=E.LGB_DEFAULT, seeds=LGB_SEEDS, feat=FEATURES_VERSION) if kind == "lgb"
+    cfg = (dict(groups=sorted(GROUPS), crit_w=CRIT_W, lgb=E.LGB_DEFAULT, seeds=LGB_SEEDS, bw=BASELINE_WIN, feat=FEATURES_VERSION) if kind == "lgb"
            else dict(epochs=CNN_EPOCHS[fd], cnn=CNN_VERSION, feat=FEATURES_VERSION))
     h = hashlib.md5(json.dumps(cfg, sort_keys=True, default=str).encode()).hexdigest()[:8]
     return f"final_oof_{kind}_{fd}_{h}.npy"
@@ -47,7 +48,7 @@ def oof_predictions(fd, refresh=False):
     Cached by configuration hash (committed to git), so unchanged models are never re-cross-validated."""
     d = E.prep(fd)
     def _lgb():
-        _, o, _ = E.cv_lgb(fd, GROUPS, crit_w=CRIT_W, seeds=LGB_SEEDS); return o
+        _, o, _ = E.cv_lgb(fd, GROUPS, crit_w=CRIT_W, seeds=LGB_SEEDS, bw=BASELINE_WIN); return o
     def _cnn():
         _, o = C.cv_cnn(fd, "gated", epochs=CNN_EPOCHS[fd]); return o
     return d, _cached(_key("lgb", fd), _lgb, refresh), _cached(_key("cnn", fd), _cnn, refresh)
@@ -136,7 +137,7 @@ def run(fd, refresh=False, oof_only=False):
         return info
 
     # ---------------- 2. final models on 100% of training engines
-    Ftr = E.build_features(tr, GROUPS, k); Fte = E.build_features(te, GROUPS, k)
+    Ftr = E.build_features(tr, GROUPS, k, BASELINE_WIN); Fte = E.build_features(te, GROUPS, k, BASELINE_WIN)
     w_s = 1.0 + CRIT_W * (tr["RUL"].values <= CRIT)
     gbms = [lgb.LGBMRegressor(**{**E.LGB_DEFAULT, "random_state": E.LGB_DEFAULT["random_state"] + i}).fit(Ftr, y_all, sample_weight=w_s)
             for i in range(LGB_SEEDS)]

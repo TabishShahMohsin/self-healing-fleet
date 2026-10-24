@@ -29,16 +29,16 @@ RMSE in cycles against true RUL capped at 125 (standard protocol). "Urgent" = tr
 
 | Subset | Test engines | LightGBM | 1D-CNN | Ensemble | CV RMSE | NASA score | 90% interval coverage | Urgent engines flagged | Human review | False P1 (true RUL > 50) |
 |---|---|---|---|---|---|---|---|---|---|---|
-| FD001 | 100 | 10.4 | 12.8 | **10.1** | 9.2 | 155 | 84% | 16/16 | 1% | 0 |
-| FD002 | 259 | 18.5 | 19.7 | **16.8** | 18.8 | 1,586 | 90% | 53/53 | 2% | 5 |
-| FD003 | 100 | 10.4 | 13.0 | **10.1** | 8.4 | 192 | 89% | 14/14 | 2% | 1 |
-| FD004 | 248 | 22.5 | 24.5 | **21.0** | 20.4 | 3,254 | 88% | 40/40 | 1% | 11 |
+| FD001 | 100 | 9.9 | 12.8 | **9.6** | 9.1 | 143 | 81% | 16/16 | 1% | 0 |
+| FD002 | 259 | 18.0 | 19.7 | **16.4** | 18.4 | 1,533 | 92% | 53/53 | 2% | 5 |
+| FD003 | 100 | 10.2 | 13.0 | **10.0** | 8.3 | 196 | 90% | 14/14 | 2% | 1 |
+| FD004 | 248 | 21.7 | 24.5 | **20.4** | 20.2 | 2,902 | 89% | 40/40 | 2% | 11 |
 
 First version of this PoC (test RMSE 12.4 / 18.1 / 12.7 / 24.1, FD004 human review 50%) is the starting point; the numbers above come from the iteration log below.
 
 **Retraining demo** (`retrain_demo.py`): a champion trained on FD001 (compressor fault only) meets FD003 engines with a
 new fan fault. PSI flags 10/14 sensors as drifted (> 0.2), a challenger is retrained, and FD003 RMSE drops
-from 21.9 to 9.5 with FD001 unchanged (10.4 → 10.2), so it is promoted to `@champion`.
+from 21.2 to 9.2 with FD001 roughly unchanged (9.9 → 10.1), so it is promoted to `@champion`.
 
 ## Iteration log
 
@@ -52,12 +52,13 @@ All runs are in `out/experiments.csv`.
 | + per-engine baseline delta | 9.4 | 20.4 | 8.7 | 21.4 |
 | + multi-scale deltas | 9.5 | 20.2 | 8.9 | 21.1 |
 | + 3× weight on last 30 cycles | 9.5 | – | – | 20.9 |
-| + regime-gated CNN blend (final) | **9.2** | **18.8** | **8.4** | **20.4** |
+| + baseline window 15 → 40 cycles, LightGBM only | 9.5 | 19.7 | 8.9 | 20.7 |
+| + regime-gated CNN blend (final) | **9.1** | **18.4** | **8.3** | **20.2** |
 
 Tried and dropped: running min/max of deltas (worse), other EWMA rates, slow-trend features, regime id as a feature,
 per-regime EWMA state, RUL cap 115 or 135 (125 is best), slower or larger LightGBM, a CNN without the age channel
 (14.8 vs 12.4 RMSE on FD001), blending that CNN in (hurt), and averaging each engine's predictions over its last 5-50 cycles
-(no gain: the errors are persistent per engine, not per-cycle noise).
+(no gain: the errors are persistent per engine, not per-cycle noise), baseline windows of 10 or 25 cycles (10 worse; 25 gained only 0.14, below the gate; 40 was adopted).
 
 ## Run it
 
@@ -86,8 +87,8 @@ rejected ideas are logged in `nightly/BACKLOG.md` and `nightly/LOG.md`.
 
 ## Known limitations / next steps
 
-- FD002/FD004 (six operating conditions) are still the weak spot: RMSE ~17–21 and wide intervals. The agent now flags every urgent engine with almost no human review, but pays for it with false P1 alarms (11 on FD004).
-- Test coverage of the 90% interval is 84–90%, a little under target on FD001 and FD004 (small test sets, so some noise).
+- FD002/FD004 (six operating conditions) are still the weak spot: RMSE ~16–20 and wide intervals. The agent now flags every urgent engine with almost no human review, but pays for it with false P1 alarms (11 on FD004).
+- Test coverage of the 90% interval is 81–92%, a little under target on FD001 (81%) (small test sets, so some noise).
 - The CNN is weaker than LightGBM alone; it only helps as a minor ensemble member.
 - Not yet built: Prefect orchestration, Streamlit dashboard, live streaming replay.
 

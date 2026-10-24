@@ -2,38 +2,38 @@
   "note": "CV (5-fold, engine-grouped) RMSE of the current champion; refresh with `python nightly/gate.py --refresh-champion` after an accepted full run.",
   "lgb": {
     "FD001": {
-      "rmse": 9.488,
-      "rmse_crit": 3.631
+      "rmse": 9.518,
+      "rmse_crit": 3.48
     },
     "FD002": {
-      "rmse": 20.33,
-      "rmse_crit": 15.397
+      "rmse": 19.7,
+      "rmse_crit": 14.395
     },
     "FD003": {
-      "rmse": 8.835,
-      "rmse_crit": 3.515
+      "rmse": 8.912,
+      "rmse_crit": 3.362
     },
     "FD004": {
-      "rmse": 20.887,
-      "rmse_crit": 18.051
+      "rmse": 20.667,
+      "rmse_crit": 17.564
     }
   },
   "ens": {
     "FD001": {
-      "rmse": 9.179,
-      "rmse_crit": 3.626
+      "rmse": 9.118,
+      "rmse_crit": 3.596
     },
     "FD002": {
-      "rmse": 18.803,
-      "rmse_crit": 14.441
+      "rmse": 18.364,
+      "rmse_crit": 13.763
     },
     "FD003": {
-      "rmse": 8.353,
-      "rmse_crit": 3.712
+      "rmse": 8.28,
+      "rmse_crit": 3.923
     },
     "FD004": {
-      "rmse": 20.366,
-      "rmse_crit": 17.826
+      "rmse": 20.169,
+      "rmse_crit": 17.551
     }
   }
 }

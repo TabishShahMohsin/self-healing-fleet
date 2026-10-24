@@ -9,11 +9,11 @@ import numpy as np, pandas as pd, mlflow, lightgbm as lgb
 from mlflow import MlflowClient
 from pipeline import load, clean, RegimeNorm, nasa_score, SENS, CAP, CRIT, ROOT, OUT
 import exp_lib as E
-from run_final import GROUPS, CRIT_W      # same feature set / loss weighting as the production pipeline
+from run_final import GROUPS, CRIT_W, BASELINE_WIN      # same feature set / loss weighting as the production pipeline
 
 
 def features(df, k):
-    return E.build_features(df, GROUPS, k)
+    return E.build_features(df, GROUPS, k, BASELINE_WIN)
 
 
 def train_lgb(F, y_raw):

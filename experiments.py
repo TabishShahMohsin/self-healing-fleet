@@ -34,6 +34,11 @@ CFG.update({
 CFG.update({
  "E12_bag5_critw3": dict(groups=M, crit_w=3.0, seeds=5),
 })
+CFG.update({
+ "N2a_bw10": dict(groups=M, crit_w=3.0, bw=10),
+ "N2b_bw25": dict(groups=M, crit_w=3.0, bw=25),
+ "N2c_bw40": dict(groups=M, crit_w=3.0, bw=40),
+})
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":

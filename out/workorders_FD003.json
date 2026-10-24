@@ -3,15 +3,15 @@
     "wo_id": "WO-FD003-001",
     "engine": "FD003/unit1",
     "severity": "P1_CRITICAL",
-    "rul_pred": 45.8,
+    "rul_pred": 46.8,
     "rul_interval": [
-      36.7,
-      54.9
+      37.7,
+      56.0
     ],
     "health_index": 0.83,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s17"
     ],
     "action": "Ground unit and inspect",
@@ -23,15 +23,15 @@
     "wo_id": "WO-FD003-002",
     "engine": "FD003/unit2",
     "severity": "P2_HIGH",
-    "rul_pred": 55.1,
+    "rul_pred": 57.2,
     "rul_interval": [
-      46.0,
-      64.1
+      48.0,
+      66.4
     ],
     "health_index": 0.49,
     "top_sensors": [
       "s11",
-      "s2",
+      "s12",
       "cycle"
     ],
     "action": "Schedule at next service window",
@@ -43,16 +43,16 @@
     "wo_id": "WO-FD003-003",
     "engine": "FD003/unit3",
     "severity": "P1_CRITICAL",
-    "rul_pred": 31.0,
+    "rul_pred": 30.4,
     "rul_interval": [
-      21.9,
-      40.1
+      21.2,
+      39.6
     ],
     "health_index": 0.96,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -63,15 +63,15 @@
     "wo_id": "WO-FD003-008",
     "engine": "FD003/unit8",
     "severity": "P2_HIGH",
-    "rul_pred": 53.1,
+    "rul_pred": 55.6,
     "rul_interval": [
-      44.1,
-      62.2
+      46.4,
+      64.8
     ],
     "health_index": 0.69,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s17"
     ],
     "action": "Schedule at next service window",
@@ -83,10 +83,10 @@
     "wo_id": "WO-FD003-009",
     "engine": "FD003/unit9",
     "severity": "P2_HIGH",
-    "rul_pred": 53.6,
+    "rul_pred": 53.8,
     "rul_interval": [
       44.6,
-      62.7
+      62.9
     ],
     "health_index": 0.43,
     "top_sensors": [
@@ -103,15 +103,15 @@
     "wo_id": "WO-FD003-014",
     "engine": "FD003/unit14",
     "severity": "P1_CRITICAL",
-    "rul_pred": 27.2,
+    "rul_pred": 27.7,
     "rul_interval": [
-      21.8,
-      32.5
+      21.4,
+      34.0
     ],
     "health_index": 0.82,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
     "action": "Ground unit and inspect",
@@ -123,16 +123,16 @@
     "wo_id": "WO-FD003-016",
     "engine": "FD003/unit16",
     "severity": "P2_HIGH",
-    "rul_pred": 69.8,
+    "rul_pred": 68.7,
     "rul_interval": [
-      49.7,
-      90.0
+      48.4,
+      89.1
     ],
     "health_index": 0.02,
     "top_sensors": [
       "s4",
       "s9",
-      "s12"
+      "s11"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -143,10 +143,10 @@
     "wo_id": "WO-FD003-020",
     "engine": "FD003/unit20",
     "severity": "P1_CRITICAL",
-    "rul_pred": 56.4,
+    "rul_pred": 55.8,
     "rul_interval": [
-      47.4,
-      65.5
+      46.6,
+      65.0
     ],
     "health_index": 0.82,
     "top_sensors": [
@@ -163,16 +163,16 @@
     "wo_id": "WO-FD003-021",
     "engine": "FD003/unit21",
     "severity": "P1_CRITICAL",
-    "rul_pred": 18.2,
+    "rul_pred": 18.4,
     "rul_interval": [
-      12.8,
-      23.5
+      12.1,
+      24.8
     ],
     "health_index": 0.99,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -183,10 +183,10 @@
     "wo_id": "WO-FD003-024",
     "engine": "FD003/unit24",
     "severity": "P1_CRITICAL",
-    "rul_pred": 10.4,
+    "rul_pred": 11.7,
     "rul_interval": [
-      5.1,
-      15.8
+      5.3,
+      18.0
     ],
     "health_index": 1.0,
     "top_sensors": [
@@ -203,10 +203,10 @@
     "wo_id": "WO-FD003-025",
     "engine": "FD003/unit25",
     "severity": "P2_HIGH",
-    "rul_pred": 58.8,
+    "rul_pred": 57.1,
     "rul_interval": [
-      49.8,
-      67.9
+      47.9,
+      66.3
     ],
     "health_index": 0.7,
     "top_sensors": [
@@ -225,13 +225,13 @@
     "severity": "P1_CRITICAL",
     "rul_pred": 10.4,
     "rul_interval": [
-      5.0,
-      15.8
+      4.1,
+      16.7
     ],
     "health_index": 0.93,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
     "action": "Ground unit and inspect",
@@ -243,15 +243,15 @@
     "wo_id": "WO-FD003-032",
     "engine": "FD003/unit32",
     "severity": "P2_HIGH",
-    "rul_pred": 67.2,
+    "rul_pred": 66.9,
     "rul_interval": [
-      47.1,
+      46.5,
       87.3
     ],
     "health_index": 0.77,
     "top_sensors": [
+      "s11",
       "s9",
-      "cycle",
       "s14"
     ],
     "action": "Schedule at next service window",
@@ -262,20 +262,20 @@
   {
     "wo_id": "WO-FD003-038",
     "engine": "FD003/unit38",
-    "severity": "P2_HIGH",
-    "rul_pred": 26.6,
+    "severity": "P1_CRITICAL",
+    "rul_pred": 25.3,
     "rul_interval": [
-      21.2,
-      32.0
+      19.0,
+      31.6
     ],
     "health_index": 0.74,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
-    "action": "Schedule at next service window",
-    "due_within_cycles": 25,
+    "action": "Ground unit and inspect",
+    "due_within_cycles": 5,
     "model_version": "FD003-ens-v2",
     "true_rul": 22
   },
@@ -283,16 +283,16 @@
     "wo_id": "WO-FD003-039",
     "engine": "FD003/unit39",
     "severity": "P1_CRITICAL",
-    "rul_pred": 9.0,
+    "rul_pred": 9.1,
     "rul_interval": [
-      3.6,
-      14.4
+      2.8,
+      15.4
     ],
     "health_index": 0.98,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -303,15 +303,15 @@
     "wo_id": "WO-FD003-040",
     "engine": "FD003/unit40",
     "severity": "P1_CRITICAL",
-    "rul_pred": 38.9,
+    "rul_pred": 37.4,
     "rul_interval": [
-      29.8,
-      47.9
+      28.2,
+      46.6
     ],
     "health_index": 0.91,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
     "action": "Ground unit and inspect",
@@ -325,14 +325,14 @@
     "severity": "P1_CRITICAL",
     "rul_pred": 8.7,
     "rul_interval": [
-      3.3,
-      14.1
+      2.4,
+      15.0
     ],
     "health_index": 0.96,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -343,16 +343,16 @@
     "wo_id": "WO-FD003-048",
     "engine": "FD003/unit48",
     "severity": "P2_HIGH",
-    "rul_pred": 63.4,
+    "rul_pred": 60.4,
     "rul_interval": [
-      43.2,
-      83.5
+      40.0,
+      80.8
     ],
     "health_index": 0.77,
     "top_sensors": [
-      "s4",
       "s11",
-      "s15"
+      "s4",
+      "s17"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -363,10 +363,10 @@
     "wo_id": "WO-FD003-050",
     "engine": "FD003/unit50",
     "severity": "P1_CRITICAL",
-    "rul_pred": 13.8,
+    "rul_pred": 15.1,
     "rul_interval": [
-      8.4,
-      19.1
+      8.8,
+      21.4
     ],
     "health_index": 0.81,
     "top_sensors": [
@@ -383,16 +383,16 @@
     "wo_id": "WO-FD003-055",
     "engine": "FD003/unit55",
     "severity": "P2_HIGH",
-    "rul_pred": 56.2,
+    "rul_pred": 55.1,
     "rul_interval": [
-      47.1,
-      65.3
+      45.9,
+      64.3
     ],
     "health_index": 0.75,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -403,10 +403,10 @@
     "wo_id": "WO-FD003-058",
     "engine": "FD003/unit58",
     "severity": "P2_HIGH",
-    "rul_pred": 43.0,
+    "rul_pred": 42.3,
     "rul_interval": [
-      34.0,
-      52.1
+      33.1,
+      51.5
     ],
     "health_index": 0.27,
     "top_sensors": [
@@ -423,15 +423,15 @@
     "wo_id": "WO-FD003-059",
     "engine": "FD003/unit59",
     "severity": "P2_HIGH",
-    "rul_pred": 47.6,
+    "rul_pred": 45.3,
     "rul_interval": [
-      38.5,
-      56.7
+      36.1,
+      54.4
     ],
     "health_index": 0.78,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
     "action": "Schedule at next service window",
@@ -443,16 +443,16 @@
     "wo_id": "WO-FD003-062",
     "engine": "FD003/unit62",
     "severity": "P2_HIGH",
-    "rul_pred": 64.2,
+    "rul_pred": 62.6,
     "rul_interval": [
-      44.1,
-      84.3
+      42.3,
+      83.0
     ],
     "health_index": 0.4,
     "top_sensors": [
       "s11",
-      "s12",
-      "s9"
+      "s17",
+      "s12"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -463,16 +463,16 @@
     "wo_id": "WO-FD003-064",
     "engine": "FD003/unit64",
     "severity": "P1_CRITICAL",
-    "rul_pred": 27.1,
+    "rul_pred": 26.4,
     "rul_interval": [
-      21.7,
-      32.5
+      20.1,
+      32.7
     ],
     "health_index": 0.89,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -485,14 +485,14 @@
     "severity": "P1_CRITICAL",
     "rul_pred": 37.2,
     "rul_interval": [
-      28.2,
-      46.3
+      28.0,
+      46.4
     ],
     "health_index": 0.96,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -503,15 +503,15 @@
     "wo_id": "WO-FD003-072",
     "engine": "FD003/unit72",
     "severity": "P2_HIGH",
-    "rul_pred": 46.0,
+    "rul_pred": 45.0,
     "rul_interval": [
-      36.9,
-      55.0
+      35.8,
+      54.1
     ],
     "health_index": 0.76,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s12"
     ],
     "action": "Schedule at next service window",
@@ -523,15 +523,15 @@
     "wo_id": "WO-FD003-075",
     "engine": "FD003/unit75",
     "severity": "P2_HIGH",
-    "rul_pred": 44.8,
+    "rul_pred": 45.5,
     "rul_interval": [
-      35.7,
-      53.9
+      36.3,
+      54.7
     ],
     "health_index": 0.7,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s17"
     ],
     "action": "Schedule at next service window",
@@ -543,10 +543,10 @@
     "wo_id": "WO-FD003-076",
     "engine": "FD003/unit76",
     "severity": "P1_CRITICAL",
-    "rul_pred": 23.5,
+    "rul_pred": 23.6,
     "rul_interval": [
-      18.1,
-      28.9
+      17.3,
+      29.9
     ],
     "health_index": 0.72,
     "top_sensors": [
@@ -563,16 +563,16 @@
     "wo_id": "WO-FD003-077",
     "engine": "FD003/unit77",
     "severity": "HUMAN_REVIEW",
-    "rul_pred": 86.5,
+    "rul_pred": 82.5,
     "rul_interval": [
-      66.3,
-      106.6
+      62.1,
+      102.8
     ],
     "health_index": 0.83,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Exception queue: engineer review",
     "due_within_cycles": null,
@@ -583,16 +583,16 @@
     "wo_id": "WO-FD003-078",
     "engine": "FD003/unit78",
     "severity": "P1_CRITICAL",
-    "rul_pred": 18.0,
+    "rul_pred": 17.9,
     "rul_interval": [
-      12.6,
-      23.4
+      11.6,
+      24.2
     ],
     "health_index": 0.99,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -603,15 +603,15 @@
     "wo_id": "WO-FD003-079",
     "engine": "FD003/unit79",
     "severity": "P1_CRITICAL",
-    "rul_pred": 19.5,
+    "rul_pred": 18.9,
     "rul_interval": [
-      14.1,
-      24.8
+      12.5,
+      25.2
     ],
     "health_index": 0.8,
     "top_sensors": [
-      "s4",
       "s11",
+      "s4",
       "s2"
     ],
     "action": "Ground unit and inspect",
@@ -623,16 +623,16 @@
     "wo_id": "WO-FD003-081",
     "engine": "FD003/unit81",
     "severity": "P1_CRITICAL",
-    "rul_pred": 15.4,
+    "rul_pred": 15.8,
     "rul_interval": [
-      10.0,
-      20.8
+      9.5,
+      22.1
     ],
     "health_index": 0.9,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -643,16 +643,16 @@
     "wo_id": "WO-FD003-082",
     "engine": "FD003/unit82",
     "severity": "P1_CRITICAL",
-    "rul_pred": 6.0,
+    "rul_pred": 6.2,
     "rul_interval": [
-      0.6,
-      11.3
+      0.0,
+      12.5
     ],
     "health_index": 1.0,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -663,16 +663,16 @@
     "wo_id": "WO-FD003-085",
     "engine": "FD003/unit85",
     "severity": "P2_HIGH",
-    "rul_pred": 62.1,
+    "rul_pred": 61.5,
     "rul_interval": [
-      42.0,
-      82.3
+      41.1,
+      81.9
     ],
     "health_index": 0.39,
     "top_sensors": [
       "s11",
       "cycle",
-      "s4"
+      "reg0"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -683,10 +683,10 @@
     "wo_id": "WO-FD003-086",
     "engine": "FD003/unit86",
     "severity": "P1_CRITICAL",
-    "rul_pred": 23.6,
+    "rul_pred": 23.5,
     "rul_interval": [
-      18.3,
-      29.0
+      17.2,
+      29.8
     ],
     "health_index": 0.89,
     "top_sensors": [
@@ -703,15 +703,15 @@
     "wo_id": "WO-FD003-089",
     "engine": "FD003/unit89",
     "severity": "P2_HIGH",
-    "rul_pred": 43.6,
+    "rul_pred": 45.4,
     "rul_interval": [
-      34.5,
-      52.7
+      36.2,
+      54.6
     ],
     "health_index": 0.35,
     "top_sensors": [
-      "s11",
       "s4",
+      "s11",
       "cycle"
     ],
     "action": "Schedule at next service window",
@@ -723,16 +723,16 @@
     "wo_id": "WO-FD003-090",
     "engine": "FD003/unit90",
     "severity": "P2_HIGH",
-    "rul_pred": 50.1,
+    "rul_pred": 47.5,
     "rul_interval": [
-      41.0,
-      59.2
+      38.3,
+      56.7
     ],
     "health_index": 0.53,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Schedule at next service window",
     "due_within_cycles": 25,
@@ -743,16 +743,16 @@
     "wo_id": "WO-FD003-092",
     "engine": "FD003/unit92",
     "severity": "P1_CRITICAL",
-    "rul_pred": 11.9,
+    "rul_pred": 11.7,
     "rul_interval": [
-      6.6,
-      17.3
+      5.4,
+      18.1
     ],
     "health_index": 1.0,
     "top_sensors": [
       "s4",
       "s11",
-      "s17"
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
@@ -763,10 +763,10 @@
     "wo_id": "WO-FD003-093",
     "engine": "FD003/unit93",
     "severity": "P2_HIGH",
-    "rul_pred": 65.4,
+    "rul_pred": 67.5,
     "rul_interval": [
-      45.2,
-      85.5
+      47.1,
+      87.9
     ],
     "health_index": 0.27,
     "top_sensors": [
@@ -783,10 +783,10 @@
     "wo_id": "WO-FD003-094",
     "engine": "FD003/unit94",
     "severity": "P1_CRITICAL",
-    "rul_pred": 7.9,
+    "rul_pred": 7.6,
     "rul_interval": [
-      2.5,
-      13.3
+      1.3,
+      13.9
     ],
     "health_index": 1.0,
     "top_sensors": [
@@ -803,10 +803,10 @@
     "wo_id": "WO-FD003-096",
     "engine": "FD003/unit96",
     "severity": "HUMAN_REVIEW",
-    "rul_pred": 110.7,
+    "rul_pred": 110.6,
     "rul_interval": [
-      96.9,
-      124.5
+      96.8,
+      124.3
     ],
     "health_index": 0.82,
     "top_sensors": [
@@ -823,10 +823,10 @@
     "wo_id": "WO-FD003-098",
     "engine": "FD003/unit98",
     "severity": "P1_CRITICAL",
-    "rul_pred": 19.8,
+    "rul_pred": 20.7,
     "rul_interval": [
-      14.5,
-      25.2
+      14.4,
+      27.0
     ],
     "health_index": 0.89,
     "top_sensors": [
@@ -843,10 +843,10 @@
     "wo_id": "WO-FD003-099",
     "engine": "FD003/unit99",
     "severity": "P1_CRITICAL",
-    "rul_pred": 7.0,
+    "rul_pred": 7.1,
     "rul_interval": [
-      1.6,
-      12.4
+      0.8,
+      13.4
     ],
     "health_index": 0.99,
     "top_sensors": [
@@ -863,16 +863,16 @@
     "wo_id": "WO-FD003-100",
     "engine": "FD003/unit100",
     "severity": "P1_CRITICAL",
-    "rul_pred": 30.1,
+    "rul_pred": 31.4,
     "rul_interval": [
-      21.0,
-      39.1
+      22.2,
+      40.6
     ],
     "health_index": 0.91,
     "top_sensors": [
-      "s4",
       "s11",
-      "s17"
+      "s4",
+      "s2"
     ],
     "action": "Ground unit and inspect",
     "due_within_cycles": 5,
