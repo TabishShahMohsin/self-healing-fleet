@@ -39,6 +39,13 @@ CFG.update({
  "N2b_bw25": dict(groups=M, crit_w=3.0, bw=25),
  "N2c_bw40": dict(groups=M, crit_w=3.0, bw=40),
 })
+# Nightly 2026-10-25: random search of LightGBM hyper-parameters (seeded, 12 configs), on top of the champion (bw=40, crit_w=3)
+_rng = np.random.default_rng(2026)
+for _i in range(12):
+    CFG[f"N3_rs{_i:02d}"] = dict(groups=M, crit_w=3.0, bw=40, params=dict(
+        n_jobs=1, num_leaves=int(_rng.choice([7, 15, 31, 63])), min_child_samples=int(_rng.choice([20, 40, 80, 150])),
+        colsample_bytree=float(_rng.choice([0.2, 0.3, 0.5, 0.7])), reg_lambda=float(_rng.choice([0, 1, 5, 20])),
+        learning_rate=float(_rng.choice([0.03, 0.05, 0.08])), n_estimators=int(_rng.choice([300, 500, 800]))))
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":
