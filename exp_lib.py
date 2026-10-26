@@ -120,7 +120,7 @@ LGB_DEFAULT = dict(n_estimators=400, learning_rate=0.05, num_leaves=31, min_chil
                    subsample=0.8, subsample_freq=1, colsample_bytree=0.5, random_state=42, verbose=-1, n_jobs=2)
 
 
-def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1, bw=15):
+def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1, bw=15, et=0.0):
     d = prep(fd, ewma, ref); tr = d["tr"]
     F = build_features(tr, groups, d["k"], bw)
     y = np.minimum(tr["RUL"].values, cap)
@@ -131,6 +131,10 @@ def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_f
         m_tr = tr["unit"].isin(tr_u).values; m_va = ~m_tr
         oof[m_va] = np.mean([lgb.LGBMRegressor(**{**pr, "random_state": pr["random_state"] + s_}).fit(
             F[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(F[m_va]) for s_ in range(seeds)], axis=0)
+        if et:   # optional diverse member: ExtraTrees on the same features, blended with weight `et`
+            from sklearn.ensemble import ExtraTreesRegressor
+            xt = ExtraTreesRegressor(n_estimators=150, min_samples_leaf=5, max_features=0.3, n_jobs=2, random_state=42)
+            oof[m_va] = (1 - et) * oof[m_va] + et * xt.fit(F[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(F[m_va])
     return tr, oof, F.shape[1]
 
 

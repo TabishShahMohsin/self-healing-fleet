@@ -46,6 +46,8 @@ for _i in range(12):
         n_jobs=1, num_leaves=int(_rng.choice([7, 15, 31, 63])), min_child_samples=int(_rng.choice([20, 40, 80, 150])),
         colsample_bytree=float(_rng.choice([0.2, 0.3, 0.5, 0.7])), reg_lambda=float(_rng.choice([0, 1, 5, 20])),
         learning_rate=float(_rng.choice([0.03, 0.05, 0.08])), n_estimators=int(_rng.choice([300, 500, 800]))))
+# Nightly 2026-10-26: ExtraTrees as a diverse member inside the tree model (50/50 with LightGBM), on top of the champion
+CFG["N4_et50"] = dict(groups=M, crit_w=3.0, bw=40, et=0.5)
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":

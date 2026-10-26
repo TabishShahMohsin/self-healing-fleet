@@ -8,7 +8,7 @@ Current champion: see `nightly/champion.json`.
 | 1 | LightGBM seed bagging (5 seeds) | `LGB_SEEDS` in run_final.py, `seeds=5` in cv_lgb | rejected: FD001 9.49 -> 9.33, FD004 20.89 -> 20.87 for 5x the cost (FD002/FD003 not run) |
 | 2 | Baseline window length for the per-engine delta (10 / 25 / 40 cycles instead of 15) | parameterise `engine_feats` | accepted: window 40 (bw=10: +0.15 worse; bw=25: -0.14; bw=40: -0.19 CV RMSE mean, ens -0.19); test RMSE ens 9.6 / 16.4 / 10.0 / 20.4 |
 | 3 | LightGBM random search on FD002/FD004 (num_leaves, min_child_samples, colsample, reg_lambda, learning rate) | 12 random configs, then gate the best | rejected: best of 12 (N3_rs05: leaves 31, min_child 150, 500 trees) CV RMSE mean -0.09 (FD001 9.52->9.47, FD002 19.70->19.50, FD003 8.91->8.94, FD004 20.67->20.53), below the 0.15 gate; other 11 configs worse on FD002/FD004 mean |
-| 4 | Extra diverse ensemble member: ExtraTreesRegressor or HistGradientBoosting on the same features | OOF-blend weight tuned like the CNN | todo |
+| 4 | Extra diverse ensemble member: ExtraTreesRegressor or HistGradientBoosting on the same features | OOF-blend weight tuned like the CNN | rejected: 50/50 LightGBM+ExtraTrees (150 trees, leaf 5) CV RMSE mean +0.26 worse (FD001 9.52->10.00, FD002 19.70->19.80, FD003 8.91->9.36, FD004 20.67->20.66), critical window +1.17 worse; HistGradientBoosting not tried |
 | 5 | Per-engine noise features: early-life std and slope of each sensor (first 30 cycles) | new feature group "early" | todo |
 | 6 | Predict log(RUL+1) instead of RUL (relative error near end of life) | transform target in cv_lgb, invert | todo |
 | 7 | Drop the noisiest sensors per subset (by early-life SNR) | feature selection inside CV | todo |
