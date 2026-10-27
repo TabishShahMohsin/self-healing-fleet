@@ -82,6 +82,14 @@ def engine_feats(X, cyc, groups, reg=None, k=1, bw=15):
         for r in range(k):
             Dr = pd.DataFrame(np.where((reg == r)[:, None], dd, np.nan))
             out.append(Dr.ewm(alpha=0.15, ignore_na=True).mean().values); names.extend(f"{s}_r{r}" for s in SENS)
+    if "early" in groups:   # per-engine early-life noise: std and slope of each sensor over the first 30 cycles (causal: uses cycles seen so far until 30)
+        m = np.minimum(np.arange(1, T + 1), 30)
+        n = m[:, None].astype(float)
+        sx, sx2 = cs[m], cs2[m]
+        add(np.sqrt(np.maximum(sx2 / n - (sx / n) ** 2, 0)), "esd")
+        st, stt, stx = cst[m], cstt[m], cstx[m]
+        den = stt - st ** 2 / n
+        add(np.where(n > 1, (stx - st * sx / n) / np.where(den == 0, 1, den), 0.0), "esl")
     if "ms" in groups:
         add(mean(5), "m5"); add(std(10), "sd10"); add(slope(10), "sl10"); add(lag(5), "dx5"); add(lag(10), "dx10")
     return np.hstack(out).astype(np.float32), names

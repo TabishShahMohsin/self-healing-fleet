@@ -48,6 +48,7 @@ for _i in range(12):
         learning_rate=float(_rng.choice([0.03, 0.05, 0.08])), n_estimators=int(_rng.choice([300, 500, 800]))))
 # Nightly 2026-10-26: ExtraTrees as a diverse member inside the tree model (50/50 with LightGBM), on top of the champion
 CFG["N4_et50"] = dict(groups=M, crit_w=3.0, bw=40, et=0.5)
+CFG["N5_early"] = dict(groups=M | {"early"}, crit_w=3.0, bw=40)
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":
