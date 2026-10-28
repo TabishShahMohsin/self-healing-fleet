@@ -49,6 +49,8 @@ for _i in range(12):
 # Nightly 2026-10-26: ExtraTrees as a diverse member inside the tree model (50/50 with LightGBM), on top of the champion
 CFG["N4_et50"] = dict(groups=M, crit_w=3.0, bw=40, et=0.5)
 CFG["N5_early"] = dict(groups=M | {"early"}, crit_w=3.0, bw=40)
+# Nightly 2026-10-28: predict log(RUL+1) instead of RUL, on top of the champion
+CFG["N6_logtarget"] = dict(groups=M, crit_w=3.0, bw=40, logt=True)
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":

@@ -6,3 +6,4 @@
 - 2026-10-25: LightGBM random search (12 seeded configs on FD002/FD004, best then run on all four). Best N3_rs05 CV RMSE mean -0.090 (9.52/19.70/8.91/20.67 -> 9.47/19.50/8.94/20.53). REJECTED (gate needs -0.15). Defaults kept.
 - 2026-10-26: ExtraTrees blended 50/50 with LightGBM as a diverse tree member. CV RMSE mean +0.257 (9.52/19.70/8.91/20.67 -> 10.00/19.80/9.36/20.66), critical window +1.17. REJECTED. Defaults kept.
 - 2026-10-27: early-life noise features (std and slope of each sensor over first 30 cycles). CV RMSE mean +1.820 (9.52/19.70/8.91/20.67 -> 11.40/21.74/10.35/22.59), critical window +2.14. REJECTED. Defaults kept.
+- 2026-10-28: predict log(RUL+1) instead of RUL. CV RMSE mean +0.071 (9.52/19.70/8.91/20.67 -> 9.27/19.65/8.88/21.29, FD004 +0.62), critical window -1.889 (mean). REJECTED (overall RMSE gate). Defaults kept.
