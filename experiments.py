@@ -51,6 +51,8 @@ CFG["N4_et50"] = dict(groups=M, crit_w=3.0, bw=40, et=0.5)
 CFG["N5_early"] = dict(groups=M | {"early"}, crit_w=3.0, bw=40)
 # Nightly 2026-10-28: predict log(RUL+1) instead of RUL, on top of the champion
 CFG["N6_logtarget"] = dict(groups=M, crit_w=3.0, bw=40, logt=True)
+# Nightly 2026-10-28: drop the 4 lowest early-life-SNR sensors (computed per CV fold), on top of the champion
+CFG["N7_dropsnr4"] = dict(groups=M, crit_w=3.0, bw=40, drop_n=4)
 def add(name, **kw): CFG[name] = kw
 
 if __name__ == "__main__":

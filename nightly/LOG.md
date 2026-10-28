@@ -7,3 +7,4 @@
 - 2026-10-26: ExtraTrees blended 50/50 with LightGBM as a diverse tree member. CV RMSE mean +0.257 (9.52/19.70/8.91/20.67 -> 10.00/19.80/9.36/20.66), critical window +1.17. REJECTED. Defaults kept.
 - 2026-10-27: early-life noise features (std and slope of each sensor over first 30 cycles). CV RMSE mean +1.820 (9.52/19.70/8.91/20.67 -> 11.40/21.74/10.35/22.59), critical window +2.14. REJECTED. Defaults kept.
 - 2026-10-28: predict log(RUL+1) instead of RUL. CV RMSE mean +0.071 (9.52/19.70/8.91/20.67 -> 9.27/19.65/8.88/21.29, FD004 +0.62), critical window -1.889 (mean). REJECTED (overall RMSE gate). Defaults kept.
+- 2026-10-28 (night run 2): drop the 4 lowest early-life-SNR sensors (SNR computed per CV fold, no labels). CV RMSE mean +0.111 (9.52/19.70/8.91/20.67 -> 9.93/19.69/8.94/20.68, FD001 +0.41), critical window +0.181. REJECTED. Defaults kept.

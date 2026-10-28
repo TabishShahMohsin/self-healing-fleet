@@ -128,7 +128,17 @@ LGB_DEFAULT = dict(n_estimators=400, learning_rate=0.05, num_leaves=31, min_chil
                    subsample=0.8, subsample_freq=1, colsample_bytree=0.5, random_state=42, verbose=-1, n_jobs=2)
 
 
-def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1, bw=15, et=0.0, logt=False):
+def low_snr_sensors(tr, n, w=30):
+    """Sensors with the lowest SNR = mean |late - early| drift / mean early-life std (first/last w cycles per engine; no labels used)."""
+    dr, sd = [], []
+    for u, d in tr.groupby("unit", sort=False):
+        X = d[SENS].values
+        dr.append(np.abs(X[-w:].mean(0) - X[:w].mean(0))); sd.append(X[:w].std(0))
+    snr = np.mean(dr, 0) / (np.mean(sd, 0) + 1e-9)
+    return [SENS[i] for i in np.argsort(snr)[:n]]
+
+
+def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_folds=5, seeds=1, bw=15, et=0.0, logt=False, drop_n=0):
     d = prep(fd, ewma, ref); tr = d["tr"]
     F = build_features(tr, groups, d["k"], bw)
     y = np.minimum(tr["RUL"].values, cap)
@@ -138,12 +148,16 @@ def cv_lgb(fd, groups, cap=125, crit_w=0.0, params=None, ewma=0.3, ref=None, n_f
     pr = {**LGB_DEFAULT, **(params or {})}
     for tr_u, va_u in folds_for(units, n_folds):
         m_tr = tr["unit"].isin(tr_u).values; m_va = ~m_tr
+        Fc = F
+        if drop_n:   # drop the drop_n sensors with lowest early-life SNR, computed on the fold's training engines only
+            bad = set(low_snr_sensors(tr[m_tr], drop_n))
+            Fc = F[[c for c in F.columns if not any(c == s or c.startswith(s + "_") for s in bad)]]
         oof[m_va] = np.mean([lgb.LGBMRegressor(**{**pr, "random_state": pr["random_state"] + s_}).fit(
-            F[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(F[m_va]) for s_ in range(seeds)], axis=0)
+            Fc[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(Fc[m_va]) for s_ in range(seeds)], axis=0)
         if et:   # optional diverse member: ExtraTrees on the same features, blended with weight `et`
             from sklearn.ensemble import ExtraTreesRegressor
             xt = ExtraTreesRegressor(n_estimators=150, min_samples_leaf=5, max_features=0.3, n_jobs=2, random_state=42)
-            oof[m_va] = (1 - et) * oof[m_va] + et * xt.fit(F[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(F[m_va])
+            oof[m_va] = (1 - et) * oof[m_va] + et * xt.fit(Fc[m_tr], y[m_tr], sample_weight=w[m_tr]).predict(Fc[m_va])
     if logt: oof = np.expm1(oof)
     return tr, oof, F.shape[1]
 
