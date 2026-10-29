@@ -1,0 +1,58 @@
+{
+ "FD001": {
+  "conformal": {
+   "coverage": 0.897,
+   "width": 31.81
+  },
+  "quantile": {
+   "coverage": 0.715,
+   "width": 25.43
+  },
+  "quantile_cqr": {
+   "coverage": 0.902,
+   "width": 32.3
+  }
+ },
+ "FD002": {
+  "conformal": {
+   "coverage": 0.902,
+   "width": 62.54
+  },
+  "quantile": {
+   "coverage": 0.788,
+   "width": 50.77
+  },
+  "quantile_cqr": {
+   "coverage": 0.898,
+   "width": 57.99
+  }
+ },
+ "FD003": {
+  "conformal": {
+   "coverage": 0.898,
+   "width": 29.85
+  },
+  "quantile": {
+   "coverage": 0.708,
+   "width": 23.0
+  },
+  "quantile_cqr": {
+   "coverage": 0.902,
+   "width": 30.01
+  }
+ },
+ "FD004": {
+  "conformal": {
+   "coverage": 0.901,
+   "width": 62.25
+  },
+  "quantile": {
+   "coverage": 0.81,
+   "width": 52.05
+  },
+  "quantile_cqr": {
+   "coverage": 0.897,
+   "width": 57.12
+  }
+ }
+}
