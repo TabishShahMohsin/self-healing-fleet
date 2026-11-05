@@ -24,14 +24,15 @@ EDGES = (0, 30, 60, 100)                               # Mondrian bins on predic
 BASELINE_WIN = 40                                      # cycles averaged for the per-engine baseline of the delta features
 LGB_SEEDS = 1                                          # LightGBM seeds averaged (bagging)
 FEATURES_VERSION = "v1"                                # bump when exp_lib.engine_feats / preprocessing changes
+CNN_SEEDS = 1                                          # CNN seeds averaged (seed 0 keeps its original cache entry)
 CNN_VERSION = "gated-v1"                               # bump when exp_cnn architecture / inputs change
 CACHE = E.CACHE
 
 
-def _key(kind, fd):
+def _key(kind, fd, cnn_seed=0):
     """Cache file name that changes whenever the configuration behind an OOF prediction changes."""
     cfg = (dict(groups=sorted(GROUPS), crit_w=CRIT_W, lgb=E.LGB_DEFAULT, seeds=LGB_SEEDS, bw=BASELINE_WIN, feat=FEATURES_VERSION) if kind == "lgb"
-           else dict(epochs=CNN_EPOCHS[fd], cnn=CNN_VERSION, feat=FEATURES_VERSION))
+           else dict(epochs=CNN_EPOCHS[fd], cnn=CNN_VERSION, feat=FEATURES_VERSION, **({"cnn_seed": cnn_seed} if cnn_seed else {})))
     h = hashlib.md5(json.dumps(cfg, sort_keys=True, default=str).encode()).hexdigest()[:8]
     return f"final_oof_{kind}_{fd}_{h}.npy"
 
@@ -49,9 +50,12 @@ def oof_predictions(fd, refresh=False):
     d = E.prep(fd)
     def _lgb():
         _, o, _ = E.cv_lgb(fd, GROUPS, crit_w=CRIT_W, seeds=LGB_SEEDS, bw=BASELINE_WIN); return o
-    def _cnn():
-        _, o = C.cv_cnn(fd, "gated", epochs=CNN_EPOCHS[fd]); return o
-    return d, _cached(_key("lgb", fd), _lgb, refresh), _cached(_key("cnn", fd), _cnn, refresh)
+    def _cnn(s):
+        def f():
+            _, o = C.cv_cnn(fd, "gated", epochs=CNN_EPOCHS[fd], seed=100 * s); return o
+        return f
+    oof_c = np.mean([_cached(_key("cnn", fd, s), _cnn(s), refresh) for s in range(CNN_SEEDS)], axis=0)
+    return d, _cached(_key("lgb", fd), _lgb, refresh), oof_c
 
 
 def health_index(trn, life_frac=0.25, fit_mask=None):
@@ -143,12 +147,12 @@ def run(fd, refresh=False, oof_only=False):
             for i in range(LGB_SEEDS)]
     gbm = gbms[0]                                       # used for SHAP-style contributions and MLflow
     A_tr, b_tr = C.build_arrays(tr, k, "gated"); A_te, b_te = C.build_arrays(te, k, "gated")
-    net = C.fit(A_tr, b_tr, y_all, np.ones(len(tr)), np.arange(len(tr)), CNN_EPOCHS[fd], seed=0)
+    nets = [C.fit(A_tr, b_tr, y_all, np.ones(len(tr)), np.arange(len(tr)), CNN_EPOCHS[fd], seed=100 * s) for s in range(CNN_SEEDS)]
 
     # ---------------- 3. one frozen evaluation on the official test set (last cycle of every engine)
     last = te.groupby("unit").tail(1).index; lp = te.index.get_indexer(last)
     p_g = np.clip(np.mean([g.predict(Fte.loc[last]) for g in gbms], axis=0), 0, None)
-    p_c = np.clip(C.predict(net, A_te, b_te, lp), 0, None)
+    p_c = np.clip(np.mean([C.predict(n, A_te, b_te, lp) for n in nets], axis=0), 0, None)
     p_te = blend(p_g, p_c)
     y_te = np.minimum(rul_true, CAP)
     q_te = conf.q(p_te); lo = np.clip(p_te - q_te, 0, None); hi = p_te + q_te
